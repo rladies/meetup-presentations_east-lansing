@@ -1,3 +1,8 @@
+## Twitter
+- [ ] WomenInEngg
+- [ ] WomenInStem
+- [ ] GirlsWhoCode
+
 ## Ann Arbor
 ### UMich
 - [ ] MIDAS

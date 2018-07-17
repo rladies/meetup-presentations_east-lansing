@@ -1,3 +1,8 @@
+## Twitter
+- [ ] MSU Data Science
+- [ ] MSU EPET
+- [ ] MSU
+
 ## College of Engg
 ### CMSE
 - [ ] Alexis
@@ -8,12 +13,9 @@
 ### BME
 - [ ] Sudin Bhattacharya
 
-
-### WomenInEngg, WomenInStem
-- [ ] Find twitter Handles
-
 ## College of NatSci
 ### Statistics
+- [ ] ???
 
 ### Biostatistics and Epidemiology
 - [ ] Contact from Jen Richmond (Sydney)
@@ -40,16 +42,23 @@
 ### EPET
 - [ ] Emily Bovee
 - [ ] Liz Owens Boltz
+- [ ] Sukanya
+- [ ] Leigh
+- [ ] ???
 
 ## College of Business
 ### Business analytics
+- [ ] ???
 
 ## College of Social Sciences
 ### Social science analytics
+- [ ] ???
 
 ### Political sciences
+- [ ] ???
 
 ### Economics
+- [ ] ???
 
 ## College of Vet Med
 - [ ] Vilma YG
