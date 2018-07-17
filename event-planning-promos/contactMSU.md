@@ -1,14 +1,14 @@
 ## College of Engg
 ### CMSE
--  Alexis
--  Dirk Colbry
--  Brian O'Shea
+-  [ ] Alexis
+-  [ ] Dirk Colbry
+-  [ ] Brian O'Shea
 
 ### ... 
 
 
 ### WomenInEngg, WomenInStem
-- Find twitter Handles
+- [ ] Find twitter Handles
 
 ## College of NatSci
 ### Statistics
@@ -21,7 +21,8 @@
 
 ## College of Education
 ### EPET
-
+- [ ] Emily Bovee
+- [ ] Liz Owens Boltz
 
 ## College of Business
 ### Business analytics
@@ -34,7 +35,7 @@
 ### Economics
 
 ## College of Vet Med
-- Vilma
+- [ ] Vilma YG
 
 
 
