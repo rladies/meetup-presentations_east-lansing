@@ -1,10 +1,12 @@
 ## College of Engg
 ### CMSE
--  [ ] Alexis
--  [ ] Dirk Colbry
--  [ ] Brian O'Shea
+- [ ] Alexis
+- [ ] Dirk Colbry
+- [ ] Brian O'Shea
+- [ ] Arjun
 
-### ... 
+### BME
+- [ ] Sudin Bhattacharya
 
 
 ### WomenInEngg, WomenInStem
@@ -14,10 +16,25 @@
 ### Statistics
 
 ### Biostatistics and Epidemiology
+- [ ] Contact from Jen Richmond (Sydney)
+- [ ] Twitter
 
 ### MMG
+- [ ] Vic DiRita & Katie
+- [ ] Vilma
 
 ### BMB
+- [ ] Erich
+- [ ] Arjun
+
+## Physiology
+- [ ] Andrea Doseff
+
+## College of Agriculture and Natural Resources
+- [ ] Shinhan Shiu
+- [ ] Brad Day
+- [ ] Kevin Childs
+- [ ] Robin Buell
 
 ## College of Education
 ### EPET
@@ -36,6 +53,3 @@
 
 ## College of Vet Med
 - [ ] Vilma YG
-
-
-
