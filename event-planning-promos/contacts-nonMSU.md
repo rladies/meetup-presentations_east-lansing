@@ -3,6 +3,10 @@
 - [ ] WomenInStem
 - [ ] GirlsWhoCode
 
+## High school
+- [ ] Contact from @archerc5
+- [ ] Contact from Dimity, CVM?
+
 ## Ann Arbor
 ### UMich
 - [ ] MIDAS
