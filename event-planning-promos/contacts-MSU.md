@@ -1,7 +1,7 @@
 ## Twitter
-- [ ] MSU Data Science
+- [x] MSU Data Science
 - [x] MSU EPET
-- [ ] MSU
+- [x] MSU
 
 ## College of Engg
 ### CMSE
@@ -11,11 +11,11 @@
 - [ ] Arjun
 
 ### CSE
-- [ ] Women in Computing | Teresa Isela VanderSloot
+- [ ] Women in Computing | Teresa Isela VanderSloot @archerc5
 - [ ] food? @archerc5
 
 ### BME
-- [ ] Sudin Bhattacharya (also part of PharmTox?)
+- [x] Sudin Bhattacharya (also part of PharmTox?)
 
 ## College of NatSci
 ### iBio
@@ -31,7 +31,7 @@
 - [ ] ???
 
 ### Biostatistics and Epidemiology
-- [ ] Contact from Jen Richmond (Sydney)
+- [x] Nicole Talge | Contact from Jen Richmond (Sydney)
 - [ ] Twitter
 
 ### MMG
@@ -43,26 +43,22 @@
 - [x] Arjun
 
 ## Physiology
-- [ ] Andrea Doseff
+- [x] Andrea Doseff
 
 ## College of Agriculture and Natural Resources
 - [x] Shinhan Shiu
 - [x] Brad Day
 - [x] Kevin Childs, Genomics Core
 - [x] Robin Buell
-- [ ] Vima's contact in Animal sciences
 
 ## College of Education
 ### EPET
 - [x] Sharon Hammond — hammo166@msu.edu
-- [ ] Emily Bovee
+- [x] Emily Bovee
 - [x] Liz Owens Boltz
-- [ ] Sukanya
-- [ ] Leigh
-- [ ] ???
 
 ## Lyman Briggs
-- [ ] Katie Hinko
+- [x] Katie Hinko
 
 ## College of Business
 ### Business analytics
