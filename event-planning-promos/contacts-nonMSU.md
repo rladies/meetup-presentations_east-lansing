@@ -10,6 +10,7 @@
 ## Ann Arbor
 ### UMich
 - [x] MIDAS | WIDS | Moira Dowling
+- [x] Friends at UMich — Sethu, Visa, Sriram
 
 ## Grand Rapids
 ## MSU College of Human Medicine
