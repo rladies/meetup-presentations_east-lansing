@@ -35,13 +35,12 @@
 - [ ] Twitter
 
 ### MMG
-- [ ] Vic DiRita, Chair & Katie, Admin Asst.
-- [ ] Vilma
+- [x] Vic DiRita, Chair & Katie, Admin Asst.
 
 ### BMB
 - [ ] Erich Grotewold, Chair (may be not!)
-- [ ] David Arnosti
-- [ ] Arjun
+- [x] David Arnosti
+- [x] Arjun
 
 ## Physiology
 - [ ] Andrea Doseff
