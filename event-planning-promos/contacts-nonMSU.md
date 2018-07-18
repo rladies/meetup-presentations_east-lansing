@@ -9,8 +9,7 @@
 
 ## Ann Arbor
 ### UMich
-- [ ] MIDAS
-- [ ] WIDS | Moira Dowling
+- [x] MIDAS | WIDS | Moira Dowling
 
 ## Grand Rapids
 ## MSU College of Human Medicine
@@ -21,5 +20,12 @@
 - [ ] Ben Johnson
 
 ## Big Data Ignite
-- [ ] Nichole Nadkarni
-- [ ] Ritka
+- [x] Nichole Nadkarni
+- [x] Rivka
+
+## Lansing RUG
+- [x] Emilio Esposito
+- [x] Joe Kelly
+
+## MHA
+- [x] Renee Smiddy, Joe Kelly
