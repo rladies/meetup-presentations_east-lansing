@@ -1,6 +1,6 @@
 ## Twitter
 - [ ] MSU Data Science
-- [ ] MSU EPET
+- [x] MSU EPET
 - [ ] MSU
 
 ## College of Engg
@@ -47,10 +47,10 @@
 - [ ] Andrea Doseff
 
 ## College of Agriculture and Natural Resources
-- [ ] Shinhan Shiu
-- [ ] Brad Day
-- [ ] Kevin Childs, Genomics Core
-- [ ] Robin Buell
+- [x] Shinhan Shiu
+- [x] Brad Day
+- [x] Kevin Childs, Genomics Core
+- [x] Robin Buell
 - [ ] Vima's contact in Animal sciences
 
 ## College of Education
@@ -82,4 +82,4 @@
 - [ ] ???
 
 ## College of Vet Med
-- [ ] Vilma YG, Associate Dean for Research and Graduate Studies
+- [x] Vilma YG, Associate Dean for Research and Graduate Studies
