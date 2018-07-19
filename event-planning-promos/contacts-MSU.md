@@ -8,7 +8,7 @@
 - [ ] Alexis
 - [ ] Dirk Colbry
 - [ ] Brian O'Shea
-- [ ] Arjun
+- [x] Arjun
 
 ### CSE
 - [ ] Women in Computing | Teresa Isela VanderSloot @archerc5
@@ -19,10 +19,10 @@
 
 ## College of NatSci
 ### iBio
-- [ ] ?? @archerc5
+- [x] Arend Hintze (also CSE faculty)
 
 ### Statistics & Probability
-- [ ] ??? @archerc5
+- [x] Teresa Vollmer, Graduate Scretary
 
 ### Chemistry
 - [ ] ??? @archerc5
@@ -62,19 +62,23 @@
 
 ## College of Business
 ### Business analytics
-- [ ] ???
+- [x] Betsey Voorhees
 
 ## College of Social Sciences
 ### Social science data analytics
-- [ ] Ashton Shortridge, Director
-- [ ] Shengpan Lin, Associate Director | Hosts meetings actively
+- [x] Ashton Shortridge, Director
+- [x] Shengpan Lin, Associate Director | Hosts meetings actively
 - @archerc5 ask about food sponsors too, please?
 
 ### Political sciences
-- [ ] ???
+- [x] Corwin Smidt, Associate Prof
+- [x] Erika Rosebrook, PhD Student
+- [x] Jamil Scott, PhD Student
 
 ### Economics
-- [ ] ???
+- [x] Anna Terkelsen, PhD Student
+- [x] Marissa Eckrote, PhD Student
+- [ ] Soren Anderson, Faculty
 
 ## College of Vet Med
 - [x] Vilma YG, Associate Dean for Research and Graduate Studies
