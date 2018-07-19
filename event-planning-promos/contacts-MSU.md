@@ -5,10 +5,10 @@
 
 ## College of Engg
 ### CMSE
-- [ ] Alexis
-- [ ] Dirk Colbry
-- [ ] Brian O'Shea
-- [ ] Arjun
+- [x] Alexis
+- [x] Dirk Colbry
+- [x] Brian O'Shea
+- [x] Arjun
 
 ### CSE
 - [ ] Women in Computing | Teresa Isela VanderSloot @archerc5
@@ -38,7 +38,7 @@
 - [x] Vic DiRita, Chair & Katie, Admin Asst.
 
 ### BMB
-- [ ] Erich Grotewold, Chair (may be not!)
+- [x] Erich Grotewold, Chair (may be not!)
 - [x] David Arnosti
 - [x] Arjun
 
@@ -71,10 +71,17 @@
 - @archerc5 ask about food sponsors too, please?
 
 ### Political sciences
-- [ ] ???
+- [x] Corwin	Smidt | smditc@msu.edu @archerc5
 
 ### Economics
-- [ ] ???
+- [x] Terkelsen, Anna | terkelse@msu.edu @archerc5
+
+Starting Year: 2016
+Fields: Environmental, Industrial Organization
 
 ## College of Vet Med
 - [x] Vilma YG, Associate Dean for Research and Graduate Studies
+
+## College of Human Medicine
+### Dept. of Medicine
+- [x] Teresa Vollmer | teresa.vollmer@hc.msu.edu @archerc5
