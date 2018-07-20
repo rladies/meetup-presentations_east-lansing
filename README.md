@@ -11,13 +11,15 @@ R-Ladies East Lansing welcomes members of **all R proficiency levels**, whether 
 *So, please join us and bring your R-family & R-friends!*
 
 ## How to be in touch?
-Access our presentations, R scripts and more on our Github account and follow us on twitter to stay up to date about R-Ladies news! Join the meetup group to be notified of the **first meeting in July!**
+Access our presentations, R scripts and more on our Github account and follow us on twitter to stay up to date about R-Ladies news! Join the meetup group to be notified of the **first meeting on July 25!**
 
 * Meetup: https://www.meetup.com/rladies-east-lansing/
 * Twitter: [@RLadiesELansing](www.twitter.com/RLadiesELansing) & [@RLadiesGlobal](www.twitter.com/RLadiesGlobal)
 * Slack: https://rladies-eastlansing.slack.com (easy signup with *@msu.edu, *@rladies.org)
 * E-mail: eastlansing [at] rladies [dot] org; info [at] rladies [dot] org
 
+* Getting started survey for attendees: https://bit.ly/rlel-gettingstarted
+
 ## Organizers:
 Janani Ravi: [Email](mailto:jananiravi@rladies.org) | [Twitter](www.twitter.com/janani137) | [Webpage](jananiravi.github.io)
-Camille Archer: [Email](mailto:camille@rladies.org) | [Facebook](facebook.com/archerc5)
+Camille Archer: [Email](mailto:camille@rladies.org) | [Twitter](www.twitter.com/CamilleArcher5) | [Facebook](facebook.com/archerc5)
