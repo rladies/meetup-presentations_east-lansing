@@ -20,4 +20,4 @@ Access our presentations, R scripts and more on our Github account and follow us
 
 ## Organizers:
 Janani Ravi: [Email](mailto:jananiravi@rladies.org) | [Twitter](www.twitter.com/janani137) | [Webpage](jananiravi.github.io)
-Camille Archer: [Email](mailto:archerc5@msu.edu) | [Facebook](facebook.com/archerc5)
+Camille Archer: [Email](mailto:camille@rladies.org) | [Facebook](facebook.com/archerc5)
