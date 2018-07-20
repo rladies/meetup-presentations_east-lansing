@@ -10,8 +10,8 @@
 - [x] Brian O'Shea
 - [x] Arjun
 
-### CSE
-- [ ] Women in Computing | Teresa Isela VanderSloot @archerc5
+### CSE @archerc5
+- [ ]  Teresa Isela VanderSloot | Women in Computing
 - [ ] food? @archerc5
 
 ### BME
@@ -19,15 +19,15 @@
 
 ## College of NatSci
 ### iBio
-- [ ] ?? @archerc5
+- [x] Arend Hintze (also CSE faculty)
 
 ### Statistics & Probability
-- [ ] ??? @archerc5
+- [x] Teresa Vollmer, Graduate Scretary
 
-### Chemistry
-- [ ] ??? @archerc5
+### Chemistry @archerc5
+- [ ] ???
 
-### Physics and Astronomy
+### Physics and Astronomy @archerc5
 - [ ] ???
 
 ### Biostatistics and Epidemiology
@@ -61,20 +61,24 @@
 - [x] Katie Hinko
 
 ## College of Business
-### Business analytics
-- [ ] ???
+### Business analytics @archerc5
+- [x] Betsey Voorhees
 
 ## College of Social Sciences
-### Social science data analytics
-- [ ] Ashton Shortridge, Director
-- [ ] Shengpan Lin, Associate Director | Hosts meetings actively
-- @archerc5 ask about food sponsors too, please?
+### Social science data analytics @archerc5
+- [x] Ashton Shortridge, Director
+- [x] Shengpan Lin, Associate Director | Hosts meetings actively
+- ask about food sponsors too, please?
 
-### Political sciences
-- [x] Corwin	Smidt | smditc@msu.edu @archerc5
+### Political sciences @archerc5
+- [x] Corwin Smidt, Associate Prof | smditc@msu.edu
+- [x] Erika Rosebrook, PhD Student
+- [x] Jamil Scott, PhD Student
 
-### Economics
-- [x] Terkelsen, Anna | terkelse@msu.edu @archerc5
+### Economics @archerc5
+- [x] Anna Terkelsen, PhD Student | terkelse@msu.edu
+- [x] Marissa Eckrote, PhD Student
+- [ ] Soren Anderson, Faculty
 
 Starting Year: 2016
 Fields: Environmental, Industrial Organization
@@ -83,5 +87,5 @@ Fields: Environmental, Industrial Organization
 - [x] Vilma YG, Associate Dean for Research and Graduate Studies
 
 ## College of Human Medicine
-### Dept. of Medicine
-- [x] Teresa Vollmer | teresa.vollmer@hc.msu.edu @archerc5
+### Dept. of Medicine @archerc5
+- [x] Teresa Vollmer | teresa.vollmer@hc.msu.edu
