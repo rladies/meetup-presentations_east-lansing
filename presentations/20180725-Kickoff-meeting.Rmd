@@ -249,6 +249,7 @@ knitr::include_graphics("../images/r-codinglikecooking.png")
 ```
 
 <i class="fa fa-twitter fa-fw"></i>Credits: @SonyaEisenbeiss , @compbiologist
+
 ---
 class: center
 # How-to-R
