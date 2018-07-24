@@ -4,7 +4,7 @@ author: "Janani Ravi | jananiravi@rladies.org"
 date: July 25, 2018
 output:
   xaringan::moon_reader:
-    css: ["default", "rladies", "rladies-fonts"]
+    css: ["default", "rladies", "rladies-fonts", "my-theme.css"]
     logo: ../logos-qrcode/RLadiesEastLansing-sqbig.png
     lib_dir: libs
     nature:
@@ -13,11 +13,6 @@ output:
       countIncrementalSlides: false
     includes:
       in_header: header.html
-  # ioslides_presentation:
-  #   css: shiny-slides.css
-  #   logo: ../logos-qrcode/RLadiesEastLansing-sqbig.png
-  #   self_contained: no
-  #   incremental: true
     widescreen: true
 ---
 
@@ -26,6 +21,8 @@ options(htmltools.dir.version = FALSE)
 ```
 
 class: center
+background-image: url("../images/background_rladies-eastlansing.png")
+background-size: 0% 100%;
 
 # Welcome!
 ### You are in the right place!
@@ -44,8 +41,10 @@ knitr::include_graphics("../event-planning-promos/201807-First_meetup_header.png
 
 ---
 class: center
-# Agenda
+background-image: ("../images/background_rladies-eastlansing.png")
+background-size: cover;
 
+# Agenda
 .pull-left[ .left[
 ### Intro
 * to each other
@@ -112,16 +111,8 @@ knitr::include_graphics("../images/rlel-timeline.png")
 ```
 
 **Credits:** Adapted from UseR 2017!
----
-class: center
-## R-Ladies East Lansing
 
-```{r, out.width = "550px", echo=FALSE}
-knitr::include_graphics("../images/rlel-timeline.png")
-```
-
-**Credits:** Adapted from UseR 2017!
-
+--
 
 ```{r, out.width = "250px", echo=FALSE}
 knitr::include_graphics("../rladies-photos/R-Ladies_EastLansing-Chicago/RLadies-EastLansing-Chicago.jpg")
@@ -146,8 +137,9 @@ class: center
 - Arjun Krishnan (CMSE, MSU)
 - Nate Davis (MSU Data Science)
 - Nichole Nadkarni (Red Fish Viral)
-- R-Ladies Chicago Organizers | Katherine Simeon & Amy Wang
-
+- R-Ladies Chicago | Katherine Simeon & Amy Wang
+- R-Ladies Sydney | Jen Richmond
+- R-Ladies Nashville | Jennifer Thompson
 * _All you folks for being here for our Kick-off meeting!_
 ]]
 
@@ -185,6 +177,7 @@ class: center
 <a href="https://rladies.org"><i class="fa fa-link fa-fw"></i>&nbsp; rladies.org</a><br>
 ]]
 
+--
 .pull-right[ .left[ 
 ### Organizers
 #### Janani Ravi
@@ -199,3 +192,12 @@ class: center
 <a href="http://twitter.com/camillearcher5"><i class="fa fa-twitter fa-fw"></i>&nbsp; @camillearcher5</a><br>
 <a href="http://facebook.com/camille.archer.1"><i class="fa fa-facebook fa-fw"></i>&nbsp; camille.archer.1</a><br>
 ]]
+
+--
+```{r echo=FALSE}
+library(webshot) # install.packages("webshot")
+# install_phantomjs()
+file_name <- paste0("file://", normalizePath("20180725-Kickoff-meeting.html"))
+
+webshot(file_name, "20180725-Kickoff-meeting.pdf")
+```
