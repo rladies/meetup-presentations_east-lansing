@@ -41,7 +41,7 @@ knitr::include_graphics("../event-planning-promos/201807-First_meetup_header.png
 
 ---
 class: center
-background-image: ("../images/background_rladies-eastlansing.png")
+background-image: ("https://github.com/rladies-eastlansing/meetup-presentations_east-lansing/blob/master/images/background_rladies-eastlansing.png")
 background-size: cover;
 
 # Agenda

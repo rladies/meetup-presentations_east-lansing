@@ -33,7 +33,7 @@ includes:
 ---
 # using background image
 ```
-background-image: url("../logos-qrcode/rshinylady-stats-map.png")
+background-image: url("https://github.com/rladies-eastlansing/meetup-presentations_east-lansing/blob/master/images/background_rladies-eastlansing.png")
 background-position: 0% 0%
 ```
 ---
