@@ -207,7 +207,7 @@ Social `r emo::ji("butterfly")`: <i class="fa fa-twitter fa-fw"></i> <i class="f
 Website & Blogs: <i class="fa fa-github fa-fw"></i> <i class="fa fa-file-code fa-fw"></i> <br>
 Content management: <i class="fa fa-github fa-fw"></i> <i class="fa fa-google fa-fw"></i>Drive**
 
-How often should we meet? When? <i class="fa fa-calendar fa-fw"></i>
+**How often should we meet? When?** <i class="fa fa-calendar fa-fw"></i>
 
 ***
 <i class="fa fa-search fa-fw"></i> Find Camille/me <br>
@@ -307,7 +307,7 @@ class: center
 
 Want to add **GIFs** to your RMarkdown presentation?
 
-```{r giphyr, tidy=FALSE, eval=FALSE}
+```{r giphyr, tidy=TRUE, eval=FALSE}
 install.packages("giphyr")
 
 # install.packages("devtools")
@@ -322,7 +322,7 @@ class: center
 
 Want to add **emojis** to your RMarkdown presentation? `r emo::ji("cool")`
 
-```{r emo, tidy=FALSE, eval=FALSE}
+```{r emo, tidy=TRUE, eval=FALSE}
 # install.packages("devtools")
 devtools::install_github("hadley/emo") #<<
 ```
