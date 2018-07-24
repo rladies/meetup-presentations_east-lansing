@@ -219,6 +219,7 @@ Content management: <i class="fa fa-github fa-fw"></i> <i class="fa fa-google fa
 ---
 class: center
 # How-to-R
+
 ```{r tweet-r-in-3steps, out.width = "250px", echo=FALSE}
 knitr::include_graphics("../images/tweet-rin3steps.png")
 ```
@@ -236,9 +237,11 @@ knitr::include_graphics("../images/tweet-familiar2me.png")
 ```
 
 <i class="fa fa-twitter fa-fw"></i>Credits: @kierisi | @moietymouse | @mpjme
+
 ---
 class: center
 # How-to-R
+## Cooking or coding?
 
 ```{r tweet-r-codinglikecooking, out.width = "400px", echo=FALSE}
 knitr::include_graphics("../images/tweet-r-codinglikecooking.png")
@@ -249,6 +252,21 @@ knitr::include_graphics("../images/r-codinglikecooking.png")
 ```
 
 <i class="fa fa-twitter fa-fw"></i>Credits: @SonyaEisenbeiss , @compbiologist
+
+---
+class: center
+# How-to-R
+## R ecosystem
+
+```{r r-ecosystem-arjun, out.width = "350px", echo=FALSE}
+knitr::include_graphics("../images/r-ecosystem-arjun.png")
+```
+
+```{r flowchart-datascience, out.width = "250px", echo=FALSE}
+knitr::include_graphics("../images/flowchart-datascience.png")
+```
+
+<i class="fa fa-twitter fa-fw"></i>Credits: @compbiologist
 
 ---
 class: center
