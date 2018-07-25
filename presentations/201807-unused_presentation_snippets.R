@@ -23,12 +23,6 @@ output:
 knitr::include_graphics("../logos-qrcode/rshinylady-stats-map.png")
 ```
 
-# Who we are: R-Ladies
-**World-wide organization** <br>
-that promotes *gender diversity* in the **R community**  <br>
-via *meetups*, *mentorship*  <br>
-in a *friendly* and *safe* environment!
-
 # Unused xaringan
 ```
 output:
@@ -56,3 +50,71 @@ background-position: 0% 0%
 	background-size: cover;
 ```
 }
+###################################
+
+# Who we are: R-Ladies
+**World-wide organization** <br>
+that promotes *gender diversity* in the **R community**  <br>
+via *meetups*, *mentorship*  <br>
+in a *friendly* and *safe* environment!
+
+
+# How-to-R
+## Cooking or coding?
+
+```{r tweet-r-codinglikecooking, out.width = "400px", echo=FALSE}
+knitr::include_graphics("../images/tweet-r-codinglikecooking.png")
+```
+
+```{r r-codinglikecooking, out.width = "400px", echo=FALSE}
+knitr::include_graphics("../images/r-codinglikecooking.png")
+```
+
+<i class="fa fa-twitter fa-fw"></i>Credits: @SonyaEisenbeiss , @compbiologist
+
+---
+class: center
+# How-to-R
+
+.pull-left[
+```{r r-gettinghelp, out.width = "500px", echo=FALSE}
+knitr::include_graphics("../images/r-gettinghelp.png")
+```
+
+```{r r-community-obsession, out.width = "300px", echo=FALSE}
+knitr::include_graphics("../images/tweet-r-community-obsession.png")
+```
+]
+
+.pull-right[
+```{r r-datascience-books, out.width = "300px", echo=FALSE}
+knitr::include_graphics("../images/r-datascience-books.png")
+```
+]
+
+<i class="fa fa-twitter fa-fw"></i>Credits: @DynamicWebPaige | @compbiologist
+
+---
+class: center
+# How-to-R
+
+### How we _most often_ use R
+```{r flowchart-datascience, out.width = "350px", echo=FALSE}
+knitr::include_graphics("../images/flowchart-datascience.png")
+```
+--
+
+### R ecosystem
+
+```{r r-ecosystem-arjun, out.width = "350px", echo=FALSE}
+knitr::include_graphics("../images/r-ecosystem-arjun.png")
+```
+
+<i class="fa fa-twitter fa-fw"></i>Credits: @StatGarrett @compbiologist
+
+---
+class: center
+
+```{r rladies-user2017, out.width = "200px", echo=FALSE}
+knitr::include_graphics("../rladies-photos/2017-useR.jpg")
+```

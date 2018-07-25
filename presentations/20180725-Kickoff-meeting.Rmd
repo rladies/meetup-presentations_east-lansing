@@ -1,12 +1,13 @@
 ---
-title: "Kick-off Meeting: <br/> Launching R-Ladies East Lansing"
-author: "Janani Ravi | jananiravi@rladies.org"
+title: "Welcome to R-Ladies East Lansing"
+author: "<br>Janani Ravi | jananiravi@rladies.org <br> Camille Archer | camille@rladies.org"
 date: July 25, 2018
 output:
   xaringan::moon_reader:
-    css: ["default", "rladies", "rladies-fonts"] #, "my-theme.css"
-    logo: ../logos-qrcode/RLadiesEastLansing-sqbig.png
+    css: ["default", "rladies", "rladies-fonts", "my-theme.css"] #
+    # logo: ../logos-qrcode/RLadiesEastLansing-sqbig.png
     lib_dir: libs
+    # footer: "These slides available on our GitHub!"
     nature:
       highlightStyle: github
       highlightLines: true
@@ -25,15 +26,32 @@ class: center
 ### You are in the right place!
 *whether you are an **R-novice** or an **R-expert**!*
 
-```{r rlel-meetupheader, out.width = "400px", echo=FALSE}
+```{r rlel-meetupheader, out.width = "350px", echo=FALSE}
 knitr::include_graphics("../event-planning-promos/201807-First_meetup_header.png")
 ```
 
-### Let us know you!
+***
+
 .left[
 - <i class="fa fa-pencil fa-fw"></i> Please fill out our **Getting Started** survey: bit.ly/rlel-gettingstarted
 - <i class="fa fa-meetup fa-fw"></i> If you are here, please make sure you have RSVP'ed on Meetup!
 - <i class="fa fa-sign-in fa-fw"></i> Join us: bit.ly/rladies-eastlansing
+]
+
+---
+class: center, inverse
+# Let us know you!
+
+.left[
+### Pick up some `r emo::ji("pizza")`
+### Find someone you've not met before! <br>
+### Find out their:
+1. Name <br>
+2. Where are they from? <br>
+3. How & When did they start using R? <br>
+4. One interesting factoid about them! <br> <br>
+
+### Introduce them to us! `r emo::ji("smiley")`
 ]
 
 ---
@@ -42,34 +60,39 @@ class: center
 # Agenda
 .pull-left[ .left[
 ### Intro
-* to each other
-  * pick a partner
+* to each other <i class="fa fa-check fa-fw"></i>
 * to R-Ladies
+* to R-Ladies East Lansing
 
 ### R
 * Snapshot: R
 * Snapshot: Fun with R
-* Snapshot: Data Vis. w/ R
+* Snapshot: Data Vis. w/ R `r emo::ji("question")`
 ]]
 
 .pull-right[ .left[
 ### Activities
 - Topics for future meetups!
-  - Help us help you!
-  - Find Camille/me
-  - Pick up your stickies (big)
-  - Vote on all topics
 
 - Getting involved!
-  - Help <i class="fa fa-users fa-fw"></i> :)
-  - Pick up your stickies (small)
-  - Find Camille/me
-  - What would you like to do?
+
+- Sign up
+
 ]]
 
 ---
 class: center
-# Who we are
+# R community
+
+```{r r-community-obsession, out.width = "500px", echo=FALSE}
+knitr::include_graphics("../images/tweet-r-community-obsession.png")
+```
+
+<i class="fa fa-twitter fa-fw"></i>Credits: @DynamicWebPaige
+
+---
+class: center
+# Who we R
 ```{r rladies-whoweare, out.width = "300px", echo=FALSE}
 knitr::include_graphics("../images/rladies-who_we_are.png")
 ```
@@ -102,25 +125,29 @@ knitr::include_graphics("../rladies-photos/rladies-useR-collage2.png")
 
 ---
 class: center
-# R-Ladies giving back
+# R-Ladies: A force for good
 
-**LatinR** | Argentina, Brazil, Uruguay, Chile
+.pull-left[
+.left[
+**LatinR** | `r emo::ji("argentina")` `r emo::ji("brazil")` `r emo::ji("uruguay")` `r emo::ji("chile")` <br>
+**ConectaR** | Costa Rica <br>
+**Call of Data** | R-Ladies Madrid `r emo::ji("spain")` <br>
+**Working with PAWS** | R-Ladies Philly `r emo::ji("us")` <br>
+**UseR** | R-Ladies Global `r emo::ji("earth")` <br>
+**R-Ladies Abstracts** | R-Ladies Global `r emo::ji("earth")`
+**R-consortium** | policy change <i class="fa fa-arrow-right fa"></i> safe & inclusive events | R-Ladies Global `r emo::ji("earth")`
+]]
 
-**ConectaR** | Costa Rica
-
-**Call of Data** | R-Ladies Madrid
-
-**Contribution to PAWS** | R-Ladies Philly
-
-**UseR** | R-Ladies Global & individual chapters
-
-**R-consortium** | policy change towards safe & inclusive events | R-Ladies Global
-<br>
-
+.pull-right[
+```{r rladies-philly-madrid, out.width = "200px", echo=FALSE}
+knitr::include_graphics("../rladies-chapters/rladies-madrid-callofdata.png")
+knitr::include_graphics("../rladies-chapters/rladies-philly-paws.png")
+```
+]
 --
 
-```{r rladies-taipei, out.width = "500px", echo=FALSE}
-knitr::include_graphics("../images/rladies-taipei-givingback.png")
+```{r rladies-taipei, out.width = "400px", echo=FALSE}
+knitr::include_graphics("../rladies-chapters/rladies-taipei-givingback.png")
 ```
 
 ---
@@ -147,8 +174,8 @@ class: center
 .pull-left[
 ### User Level
 
-```{r GSS-userlevel, out.width = "450px", echo=FALSE}
-knitr::include_graphics("../images/GettingStartedSurvey-user_level.png")
+```{r GSS-userlevel, out.width = "325px", echo=FALSE}
+knitr::include_graphics("../images/GSS-user_level.png")
 ```
 ]
 
@@ -156,8 +183,8 @@ knitr::include_graphics("../images/GettingStartedSurvey-user_level.png")
 .pull-right[
 ### Using R for
 
-```{r GSS-rusage, out.width = "450px", echo=FALSE}
-knitr::include_graphics("../images/GettingStartedSurvey-Rusage.png")
+```{r GSS-rusage, out.width = "325px", echo=FALSE}
+knitr::include_graphics("../images/GSS-Rusage.png")
 ```
 ]
 --
@@ -165,24 +192,25 @@ knitr::include_graphics("../images/GettingStartedSurvey-Rusage.png")
 ### R-user Level
 
 ```{r GSS-ruserlevel, out.width = "400px", echo=FALSE}
-knitr::include_graphics("../images/GettingStartedSurvey-Ruser_level.png")
+knitr::include_graphics("../images/GSS-Ruser_level.png")
 ```
 
 ---
-class: center
+class: center, inverse
 # R-Ladies East Lansing
-## What we could do `r emo::ji("thinking")`
+## Things we could do `r emo::ji("thinking")`
 
-<i class="fa fa-search fa-fw"></i> Find Camille/me <br>
-<i class="fa fa-sticky-note fa"></i> Pick your large stickies (Learn/Teach/Help) <br>
-<i class="fa fa-pencil fa"></i> Write your names <br>
-<i class="fa fa-check fa"></i> Vote on the potential topics <br>
-<i class="fa fa-plus fa-fw"></i> Add new ones (if you have specific ideas, add under broader topic sheets) <br>
+<i class="fa fa-eye fa"></i> Choose topics you would like to (Learn | Teach | Help) <br> <br>
+<i class="fa fa-sticky-note fa"></i> Pick the corresponding large stickies <br> <br>
+<i class="fa fa-pencil fa"></i> Write your names <br> <br>
+<i class="fa fa-check fa"></i> Stick them below the topics of your interest <br> <br>
+<i class="fa fa-plus fa-fw"></i> Feel free to add additional comments/ideas in your stickies <br> <br>
+<i class="fa fa-search fa-fw"></i> Find Camille/me if you need help <br> <br>
 
 ---
 class: center
 # Get involved
-```{r rladies-gettinginvolved, out.width = "400px", echo=FALSE}
+```{r rladies-gettinginvolved, out.width = "500px", echo=FALSE}
 knitr::include_graphics("../images/rladies-getting-involved.png")
 ```
 
@@ -191,48 +219,105 @@ knitr::include_graphics("../images/rladies-getting-involved.png")
 **Learn <i class="fa fa-leanpub fa-fw"></i> <br>
 Present/Teach/Lead discussions `r emo::ji("teacher")` <br>
 Be an R helper: Technical <i class="fa fa-terminal fa-fw"></i> <br>
-Social `r emo::ji("butterfly")`: <i class="fa fa-twitter fa-fw"></i> <i class="fa fa-facebook fa-fw"></i> <i class="fa fa-meetup fa-fw"></i> <br>
+Social `r emo::ji("butterfly")` <i class="fa fa-twitter fa-fw"></i> <i class="fa fa-facebook fa-fw"></i> <i class="fa fa-meetup fa-fw"></i> <br>
 Website & Blogs: <i class="fa fa-github fa-fw"></i> <i class="fa fa-file-code fa-fw"></i> <br>
 Content management: <i class="fa fa-github fa-fw"></i> <i class="fa fa-google fa-fw"></i>Drive**
 
 ---
-class: center
+class: center, inverse
 # Get involved
 
+.pull-left[.left[
+Learn <i class="fa fa-leanpub fa-fw"></i> <br> <br>
+Present/Teach/Lead discussions `r emo::ji("teacher")` <br> <br>
+Be an R helper: Technical `r emo::ji("computer")` <br> <br>
+]]
+.pull-right[.left[
+Social `r emo::ji("butterfly")` <i class="fa fa-twitter fa-fw"></i> <i class="fa fa-facebook fa-fw"></i> <i class="fa fa-meetup fa-fw"></i> <br> <br>
+Website & Blogs: <i class="fa fa-github fa-fw"></i> <i class="fa fa-file-code fa-fw"></i> <br> <br>
+Content management: <i class="fa fa-github fa-fw"></i> <i class="fa fa-google fa-fw"></i>Drive <br>
+]]
+***
+<i class="fa fa-sticky-note fa"></i> Pick small stickies <br> <br>
+<i class="fa fa-pencil fa"></i> Write your names <br> <br>
+<i class="fa fa-check fa"></i> Stick 1 up against each of these <br> <br>
+<i class="fa fa-search fa-fw"></i> Find Camille/me if you need help <br> <br>
 
-**Learn <i class="fa fa-leanpub fa-fw"></i> <br>
-Present/Teach/Lead discussions `r emo::ji("teacher")` <br>
-Be an R helper: Technical <i class="fa fa-terminal fa-fw"></i> <br>
-Social `r emo::ji("butterfly")`: <i class="fa fa-twitter fa-fw"></i> <i class="fa fa-facebook fa-fw"></i> <i class="fa fa-meetup fa-fw"></i> <br>
-Website & Blogs: <i class="fa fa-github fa-fw"></i> <i class="fa fa-file-code fa-fw"></i> <br>
-Content management: <i class="fa fa-github fa-fw"></i> <i class="fa fa-google fa-fw"></i>Drive**
+---
+class: center, inverse
+# Next meeting(s)?
+### Show of hands! `r emo::ji("raised")`
 
-**How often should we meet? When?** <i class="fa fa-calendar fa-fw"></i>
+**How often should we meet?** `r emo::ji("calendar")` Biweekly? <br> <br>
+--
+
+**Fall schedule** `r emo::ji("fallen leaf")` Every other Monday, 6-730p? <br> <br>
+--
 
 ***
-<i class="fa fa-search fa-fw"></i> Find Camille/me <br>
-<i class="fa fa-sticky-note fa"></i> Pick your small stickies <br>
-<i class="fa fa-pencil fa"></i> Write your names <br>
-<i class="fa fa-check fa"></i> Stick up 1-3 of these against each topic <br>
 
+**First 3 meetings** `r emo::ji("lightning")` Lightning talks? <br> <br>
+How do you use R in your work? <br>
+Cool R packages?
+--
+
+***
+
+## Please sign up! <br>
+
+---
+class: center
+# Fun with R!
+
+Want to add **GIFs** to your RMarkdown presentation?
+
+```{r giphyr, tidy=TRUE, eval=FALSE}
+install.packages("giphyr")
+
+# install.packages("devtools")
+devtools::install_github("haozhu233/giphyr") #<<
+```
+
+![inside+out](https://media0.giphy.com/media/p8scpQ0loFwNa/giphy.gif?cid=e1bb72ff5b5776b06d566a5763d03b19)  
+<i class="fa fa-github fa-fw"></i>Credits: haozhu233/giphyr
+---
+class: center
+# Fun with R!
+
+Want to add **emojis** to your RMarkdown presentation? `r emo::ji("cool")`
+
+```{r emo, tidy=TRUE, eval=FALSE}
+# install.packages("devtools")
+devtools::install_github("hadley/emo") #<<
+```
+<i class="fa fa-github fa-fw"></i>Credits: hadley/emo
+
+--
+
+Want **coffee stains** on your documents instead? `r emo::ji("coffee")`
+
+![](http://hanno-rein.de/wp-content/uploads/2009/04/coffee.png)
+
+<i class="fa fa-coffee fa-fw"></i>Credits: Hanno Rein | hanno-rein.de
 
 ---
 class: center
 # How-to-R
-
+.pull-left[
 ```{r tweet-r-in-3steps, out.width = "250px", echo=FALSE}
 knitr::include_graphics("../images/tweet-rin3steps.png")
 ```
+]
 
---
-
-```{r tweet-impostR, out.width = "250px", echo=FALSE}
+.pull-right[
+```{r tweet-impostR, out.width = "300px", echo=FALSE}
 knitr::include_graphics("../images/tweet-impostR.png")
 ```
+<br> <br> <br> <br>
 
---
+]
 
-```{r tweet-familiar2me, out.width = "250px", echo=FALSE}
+```{r tweet-familiar2me, out.width = "450px", echo=FALSE}
 knitr::include_graphics("../images/tweet-familiar2me.png")
 ```
 
@@ -240,55 +325,88 @@ knitr::include_graphics("../images/tweet-familiar2me.png")
 
 ---
 class: center
-# How-to-R
-## Cooking or coding?
+# Acknowledgements
 
-```{r tweet-r-codinglikecooking, out.width = "400px", echo=FALSE}
-knitr::include_graphics("../images/tweet-r-codinglikecooking.png")
+.pull-left[ .left[
+
+#### People
+- Camille Archer <i class="fa fa-university fa-fw"></i> ICER, MSU
+- Arjun Krishnan <i class="fa fa-university fa-fw"></i> CMSE, MSU
+- Nate Davis <i class="fa fa-university fa-fw"></i> MSU Data Science
+- Nichole Nadkarni <i class="fa fa-industry fa-fw"></i> Red Fish Viral
+
+#### R-Ladies
+- Katherine Simeon & Amy Wang <br><i class="fa fa-map-marker fa-fw"></i>Chicago `r emo::ji("us")`
+- Jen Richmond <i class="fa fa-map-marker fa-fw"></i> Sydney `r emo::ji("australia")`
+- Melina Vidoni <i class="fa fa-map-marker fa-fw"></i>Santa Fe `r emo::ji("argentina")`
+- Jennifer Thompson <i class="fa fa-map-marker fa-fw"></i>Nashville `r emo::ji("us")`
+- Alison P Hill <i class="fa fa-map-marker fa-fw"></i>Portland `r emo::ji("us")`
+- Bruna Wundervald <i class="fa fa-map-marker fa-fw"></i>Curitiba `r emo::ji("brazil")`
+]]
+
+
+.pull-right[ .left[
+#### Packages & communities
+- Xaringan theme <i class="fa fa-github fa-fw"></i> yihui/xaringan
+  - R-Ladies `r emo::ji("argentina")` <i class="fa fa-github fa-fw"></i> rbind/apreshill
+- KnitR, R Markdown, remark.js
+- Emo, GiphyR, FontAwesome
+- MeetupR | Gabriela de Queiroz `r emo::ji("us")` <i class="fa fa-github fa-fw"></i> rshinylady
+- R-Ladies Global `r emo::ji("earth")` <i class="fa fa-slack fa-fw"></i> <i class="fa fa-github fa-fw"></i>
+- R-Ladies Remote `r emo::ji("satellite")` <i class="fa fa-slack fa-fw"></i>
+
+#### Today's Sponsor!
+
+```{r icermsu, out.width = "200px", echo=FALSE}
+knitr::include_graphics("../sponsors-contacts/icer-msu.png")
 ```
+]]
 
-```{r r-codinglikecooking, out.width = "400px", echo=FALSE}
-knitr::include_graphics("../images/r-codinglikecooking.png")
-```
+--
 
-<i class="fa fa-twitter fa-fw"></i>Credits: @SonyaEisenbeiss , @compbiologist
+<i class="fa fa-users fa-fw"></i> _All you folks for being here for our Kick-off meeting!_
+
+--
+
+
+
 
 ---
-class: center
-# How-to-R
-## R ecosystem
+class: center, inverse
+# Find us Online!
 
-```{r r-ecosystem-arjun, out.width = "350px", echo=FALSE}
-knitr::include_graphics("../images/r-ecosystem-arjun.png")
-```
+.pull-left[ .left[ 
+#### R-Ladies
+##### East Lansing
+<a href="mailto:eastlansing@rladies.org"><i class="fa fa-paper-plane fa-fw"></i>&nbsp; eastlansing@rladies.org</a><br>
+<a href="http://twitter.com/RLadiesELansing"><i class="fa fa-twitter fa-fw"></i>&nbsp; @RLadiesELansing</a><br>
+<a href="http://meetup.com/rladies-east-lansing/"><i class="fa fa-meetup fa-fw"></i>&nbsp; rladies-east-lansing</a><br>
+<a href="http://github.com/rladies-eastlansing"><i class="fa fa-github fa-fw"></i>&nbsp; @rladies-eastlansing</a><br>
+<a href="https://rladies-eastlansing.slack.com"><i class="fa fa-slack fa-fw"></i>&nbsp; rladies-eastlansing.slack.com</a><br>
+<a href="ICER #1455A, MSU"><i class="fa fa-map-marker fa-fw"></i>&nbsp; ICER, Michigan State University</a>
 
-```{r flowchart-datascience, out.width = "250px", echo=FALSE}
-knitr::include_graphics("../images/flowchart-datascience.png")
-```
+##### Global
+<a href="https://rladies.org"><i class="fa fa-link fa-fw"></i>&nbsp; rladies.org</a><br>
+<a href="http://twitter.com/RLadiesGlobal"><i class="fa fa-twitter fa-fw"></i>&nbsp; @RLadiesGlobal</a><br>
 
-<i class="fa fa-twitter fa-fw"></i>Credits: @compbiologist
+]]
 
----
-class: center
-# How-to-R
+.pull-right[ .left[ 
+#### Organizers
+##### Janani Ravi
+<a href="mailto:jananiravi@rladies.org"><i class="fa fa-paper-plane fa-fw"></i>&nbsp; jananiravi@rladies.org</a><br>
+<a href="http://github.com/jananiravi"><i class="fa fa-github fa-fw"></i>&nbsp; @jananiravi</a><br>
+<a href="http://twitter.com/janani137"><i class="fa fa-twitter fa-fw"></i>&nbsp; @janani137</a><br>
+<a href="https://jananiravi.github.io"><i class="fa fa-link fa-fw"></i>&nbsp; jananiravi.github.io</a><br>
 
-.pull-left[
-```{r r-gettinghelp, out.width = "500px", echo=FALSE}
-knitr::include_graphics("../images/r-gettinghelp.png")
-```
+##### Camille Archer
+<a href="mailto:camille@rladies.org"><i class="fa fa-paper-plane fa-fw"></i>&nbsp; camille@rladies.org</a><br>
+<a href="http://github.com/archerc5"><i class="fa fa-github fa-fw"></i>&nbsp; @archerc5</a><br>
+<a href="http://twitter.com/camillearcher5"><i class="fa fa-twitter fa-fw"></i>&nbsp; @camillearcher5</a><br>
+<a href="http://facebook.com/camille.archer.1"><i class="fa fa-facebook fa-fw"></i>&nbsp; camille.archer.1</a><br>
+]]
 
-```{r r-community-obsession, out.width = "300px", echo=FALSE}
-knitr::include_graphics("../images/tweet-r-community-obsession.png")
-```
-]
 
-.pull-right[
-```{r r-datascience-books, out.width = "300px", echo=FALSE}
-knitr::include_graphics("../images/r-datascience-books.png")
-```
-]
-
-<i class="fa fa-twitter fa-fw"></i>Credits: @DynamicWebPaige | @compbiologist
 
 ---
 class: center
@@ -319,119 +437,3 @@ class: center
 ```{r datatoviz-violin, out.width = "350px", echo=FALSE}
 knitr::include_graphics("../images/datatoviz-violinplot.png")
 ```
-
----
-class: center
-# Fun with R!
-
-Want to add **GIFs** to your RMarkdown presentation?
-
-```{r giphyr, tidy=TRUE, eval=FALSE}
-install.packages("giphyr")
-
-# install.packages("devtools")
-devtools::install_github("haozhu233/giphyr") #<<
-```
-
-![inside+out](https://media0.giphy.com/media/p8scpQ0loFwNa/giphy.gif?cid=e1bb72ff5b5776b06d566a5763d03b19)  
-<i class="fa fa-github fa-fw"></i>Credits: haozhu233/giphyr
----
-class: center
-# Fun with R
-
-Want to add **emojis** to your RMarkdown presentation? `r emo::ji("cool")`
-
-```{r emo, tidy=TRUE, eval=FALSE}
-# install.packages("devtools")
-devtools::install_github("hadley/emo") #<<
-```
-<i class="fa fa-github fa-fw"></i>Credits: hadley/emo
-
---
-
-Want **coffee stains** on your documents instead? `r emo::ji("coffee")`
-
-![](http://hanno-rein.de/wp-content/uploads/2009/04/coffee.png)
-
-<i class="fa fa-coffee fa-fw"></i>Credits: Hanno Rein | hanno-rein.de
-
----
-class: center
-# Acknowledgements
-
-.pull-left[ .left[
-#### People
-- Camille Archer <i class="fa fa-university fa-fw"></i> ICER, MSU
-- Arjun Krishnan <i class="fa fa-university fa-fw"></i> CMSE, MSU
-- Nate Davis <i class="fa fa-university fa-fw"></i> MSU Data Science
-- Nichole Nadkarni <i class="fa fa-industry fa-fw"></i> Red Fish Viral
-- Katherine Simeon & Amy Wang <i class="fa fa-map-marker fa-fw"></i>Chicago
-- Jen Richmond <i class="fa fa-map-marker fa-fw"></i> Sydney
-- Jennifer Thompson <i class="fa fa-map-marker fa-fw"></i>Nashville
-- Melina Vidoni <i class="fa fa-map-marker fa-fw"></i>Argentina
-]]
-
-
-.pull-right[ .left[
-#### Packages & communities
-- Xaringan theme | <i class="fa fa-github fa-fw"></i> yihui/xaringan
-- R-Ladies Xaringan theme | <i class="fa fa-github fa-fw"></i> alison.rbind.io/
-- KnitR, R Markdown, remark.js
-- MeetupR for RLadies-stats | Gabriela de Queiroz <i class="fa fa-github fa-fw"></i> rshinylady
-- R-Ladies Global community | <i class="fa fa-slack fa-fw"></i> <i class="fa fa-github fa-fw"></i>
-]]
-
-<i class="fa fa-users fa-fw"></i> _All you folks for being here for our Kick-off meeting!_
-
---
-
-### Today's Sponsor!
-
-```{r icermsu, out.width = "200px", echo=FALSE}
-knitr::include_graphics("../sponsors-contacts/icer-msu.png")
-```
-
-
----
-class: center
-# Find us Online!
-
-.pull-left[ .left[ 
-#### R-Ladies
-##### East Lansing
-<a href="mailto:eastlansing@rladies.org"><i class="fa fa-paper-plane fa-fw"></i>&nbsp; eastlansing@rladies.org</a><br>
-<a href="http://twitter.com/RLadiesELansing"><i class="fa fa-twitter fa-fw"></i>&nbsp; @RLadiesELansing</a><br>
-<a href="http://meetup.com/rladies-east-lansing/"><i class="fa fa-meetup fa-fw"></i>&nbsp; rladies-east-lansing</a><br>
-<a href="http://github.com/rladies-eastlansing"><i class="fa fa-github fa-fw"></i>&nbsp; @rladies-eastlansing</a><br>
-<a href="https://rladies-eastlansing.slack.com"><i class="fa fa-slack fa-fw"></i>&nbsp; rladies-eastlansing.slack.com</a><br>
-<a href="ICER #1455A, MSU"><i class="fa fa-map-marker fa-fw"></i>&nbsp; ICER, Michigan State University</a>
-
-##### Global
-<a href="https://rladies.org"><i class="fa fa-link fa-fw"></i>&nbsp; rladies.org</a><br>
-<a href="http://twitter.com/RLadiesGlobal"><i class="fa fa-twitter fa-fw"></i>&nbsp; @RLadiesGlobal</a><br>
-
-]]
-
---
-.pull-right[ .left[ 
-#### Organizers
-##### Janani Ravi
-<a href="mailto:jananiravi@rladies.org"><i class="fa fa-paper-plane fa-fw"></i>&nbsp; jananiravi@rladies.org</a><br>
-<a href="http://github.com/jananiravi"><i class="fa fa-github fa-fw"></i>&nbsp; @jananiravi</a><br>
-<a href="http://twitter.com/janani137"><i class="fa fa-twitter fa-fw"></i>&nbsp; @janani137</a><br>
-<a href="https://jananiravi.github.io"><i class="fa fa-link fa-fw"></i>&nbsp; jananiravi.github.io</a><br>
-
-##### Camille Archer
-<a href="mailto:camille@rladies.org"><i class="fa fa-paper-plane fa-fw"></i>&nbsp; camille@rladies.org</a><br>
-<a href="http://github.com/archerc5"><i class="fa fa-github fa-fw"></i>&nbsp; @archerc5</a><br>
-<a href="http://twitter.com/camillearcher5"><i class="fa fa-twitter fa-fw"></i>&nbsp; @camillearcher5</a><br>
-<a href="http://facebook.com/camille.archer.1"><i class="fa fa-facebook fa-fw"></i>&nbsp; camille.archer.1</a><br>
-]]
-
---
-
-```{r rladies-user2017, out.width = "200px", echo=FALSE}
-knitr::include_graphics("../rladies-photos/2017-useR.jpg")
-```
-
-

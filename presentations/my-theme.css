@@ -1,4 +1,10 @@
 .title-slide {
-	background-image: url("https://github.com/rladies-eastlansing/meetup-presentations_east-lansing/blob/master/images/background_rladies-eastlansing.png?raw=true");
-	background-size: cover;
+  background-image: url("https://github.com/rladies-eastlansing/meetup-presentations_east-lansing/blob/master/logos-qrcode/RLadiesEastLansing-sq.png?raw=true");
+  background-position: 0% 0%;
+  background-size: 100px;
+  background-color: #562457;
+}
+
+.title-slide .remark-slide-number {
+  display: none;
 }
