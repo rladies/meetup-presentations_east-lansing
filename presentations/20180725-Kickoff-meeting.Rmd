@@ -65,7 +65,7 @@ class: center
 * to R-Ladies East Lansing
 
 ### R
-* Snapshot: R
+* Snapshot: R `r emo::ji("question")`
 * Snapshot: Fun with R
 * Snapshot: Data Vis. w/ R `r emo::ji("question")`
 ]]
@@ -172,25 +172,22 @@ knitr::include_graphics("../rladies-photos/R-Ladies_EastLansing-Chicago/RLadies-
 class: center
 # R-Ladies East Lansing
 .pull-left[
-### User Level
-
-```{r GSS-userlevel, out.width = "325px", echo=FALSE}
+#### User Level
+```{r GSS-userlevel, out.width = "300px", echo=FALSE}
 knitr::include_graphics("../images/GSS-user_level.png")
 ```
 ]
 
 --
 .pull-right[
-### Using R for
-
+#### R usage scope
 ```{r GSS-rusage, out.width = "325px", echo=FALSE}
 knitr::include_graphics("../images/GSS-Rusage.png")
 ```
 ]
 --
 
-### R-user Level
-
+#### R-user Level
 ```{r GSS-ruserlevel, out.width = "400px", echo=FALSE}
 knitr::include_graphics("../images/GSS-Ruser_level.png")
 ```
