@@ -4,10 +4,10 @@ author: "<br>Janani Ravi | jananiravi@rladies.org <br> Camille Archer | camille@
 date: July 25, 2018
 output:
   xaringan::moon_reader:
-    css: ["default", "rladies", "rladies-fonts", "my-theme.css"] #
-    # logo: ../logos-qrcode/RLadiesEastLansing-sqbig.png
+    css: ["default", "rladies", "rladies-fonts", "my-theme.css"]
     lib_dir: libs
-    # footer: "These slides available on our GitHub!"
+    layout: true
+     <div class="my-footer"><img src="https://github.com/rladies-eastlansing/meetup-presentations_east-lansing/blob/master/logos-qrcode/RLadiesEastLansing-sq.png?raw=true" /></div>
     nature:
       highlightStyle: github
       highlightLines: true
