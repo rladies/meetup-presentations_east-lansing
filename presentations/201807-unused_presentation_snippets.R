@@ -118,3 +118,35 @@ class: center
 ```{r rladies-user2017, out.width = "200px", echo=FALSE}
 knitr::include_graphics("../rladies-photos/2017-useR.jpg")
 ```
+
+
+
+---
+	class: center
+# R for DataViz
+.pull-left[.left[
+	```{r rgraphgallery-logo, out.width = "100px", echo=FALSE}
+	knitr::include_graphics("../images/rgraphgallery-logo.png")
+	```
+	```{r rgraphgallery, out.width = "500px", echo=FALSE}
+	knitr::include_graphics("../images/rgraphgallery.png")
+	```
+	
+	]]
+
+.pull-right[.left[
+	```{r datatoviz-logo, out.width = "100px", echo=FALSE}
+	knitr::include_graphics("../images/datatoviz-logo.png")
+	```
+	```{r datatoviz-poster, out.width = "500px", echo=FALSE}
+	knitr::include_graphics("../images/datatoviz-poster.png")
+	```
+	]]
+
+---
+	class: center
+# R for DataViz
+
+```{r datatoviz-violin, out.width = "350px", echo=FALSE}
+knitr::include_graphics("../images/datatoviz-violinplot.png")
+```
