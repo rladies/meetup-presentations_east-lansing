@@ -6,6 +6,7 @@
 .RData
 .DS_Store
 .DS_Store?
+.Icon
 
 # Example code in package build process
 *-Ex.R
