@@ -6,8 +6,6 @@ output:
   xaringan::moon_reader:
     css: ["default", "rladies", "rladies-fonts", "my-theme.css"]
     lib_dir: libs
-    layout: true
-     <div class="my-footer"><img src="https://github.com/rladies-eastlansing/meetup-presentations_east-lansing/blob/master/logos-qrcode/RLadiesEastLansing-sq.png?raw=true" /></div>
     nature:
       highlightStyle: github
       highlightLines: true
@@ -18,9 +16,14 @@ output:
     widescreen: true
 ---
 
+layout: true
+    <div class="my-footer"><img src="https://github.com/rladies-eastlansing/meetup-presentations_east-lansing/blob/master/logos-qrcode/RLadiesEastLansing-sq.png?raw=true" /></div>
+
+---
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 ```
+
 class: center
 
 # Welcome!
@@ -356,7 +359,7 @@ class: center
 #### Today's Sponsor!
 
 ```{r icermsu, out.width = "200px", echo=FALSE}
-knitr::include_graphics("../sponsors-contacts/icer-msu.png")
+knitr::include_graphics("../images/icer-msu.png")
 ```
 ]]
 
