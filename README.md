@@ -1,8 +1,5 @@
 
-# Welcome to R-Ladies East Lansing
-
-## Who we are
-*R-Ladies East Lansing* is a local chapter of R-Ladies Global. We meet to discuss, learn, teach, present, work on all things R! Our priority is to provide a safe community space for anyone identifying as a minority gender who is interested in and/or working with R. The group exists to promote gender diversity in the R community worldwide. We are pro-actively inclusive of queer, trans, and all minority identities, with additional sensitivity to intersectional identities.
+![](https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/13d08a77695261bc146eede3399c5aef12b7d0df/logos-qrcode/rlel-header-welcome.png?raw=true)
 
 ## Who should join?
 R-Ladies East Lansing welcomes members of **all R proficiency levels**, whether you are a new or aspiring R user, or an experienced R programmer interested in mentoring, networking & expert upskilling. Our non-profit, civil society community is designed to develop our members' R skills & knowledge through social, collaborative learning & sharing. *Supporting minority identity access to STEM skills & careers, the Free Software Movement, and contributing to the global R community!*
@@ -11,17 +8,17 @@ R-Ladies East Lansing welcomes members of **all R proficiency levels**, whether 
 *So, please join us and bring your R-family & R-friends!*
 
 ## How to be in touch?
-Access our presentations, R scripts and more on our Github account and follow us on twitter to stay up to date about R-Ladies news! Join the meetup group to be notified of upcoming meetings! Our **kick-off meeting is scheduled for July 25!**
 
-* Meetup: https://www.meetup.com/rladies-east-lansing/
-* Twitter: [@RLadiesELansing](www.twitter.com/RLadiesELansing) & [@RLadiesGlobal](www.twitter.com/RLadiesGlobal)
-* Slack: https://rladies-eastlansing.slack.com (easy signup with *@msu.edu, *@rladies.org)
-* E-mail: eastlansing [at] rladies [dot] org; info [at] rladies [dot] org
+* **Meetup**: https://www.meetup.com/rladies-east-lansing/ (_for upcoming meetings/schedules_)
+* **Slack**: https://rladies-eastlansing.slack.com (_for R-discussions_; easy signup with `@msu.edu`, `@rladies.org`)
+* **GitHub**: [@RLadies-EastLansing](https://github.com/RLadies-EastLansing) (_for presentations, material_)
+* **Social Media**: Twitter, [@RLadiesELansing](www.twitter.com/RLadiesELansing) & [@RLadiesGlobal](www.twitter.com/RLadiesGlobal)& [Facebook](www.facebook.com/rladieseastlansing) (_for the latest updates_)
+* **E-mail**: eastlansing [at] rladies [dot] org; info [at] rladies [dot] org (_to be our sponsor, ask questions!_)
 
-* Getting started survey for attendees: https://bit.ly/rlel-gettingstarted
+* Getting started survey for new members: https://bit.ly/rlel-gettingstarted
+* Interested in giving Lightning talks (Aug, Sep 2018)? https://bit.ly/rlel-lightning
 
 ## Organizers:
 Janani Ravi: [Email](mailto:jananiravi@rladies.org) | [Twitter](www.twitter.com/janani137) | [Webpage](jananiravi.github.io)
 Camille Archer: [Email](mailto:camille@rladies.org) | [Twitter](www.twitter.com/CamilleArcher5) | [Facebook](facebook.com/archerc5)
 
-![Kick-off meeting Flyer](https://github.com/rladies-eastlansing/meetup-presentations_east-lansing/blob/master/event-planning-promos/201807-First_meetup_flyer.png)
