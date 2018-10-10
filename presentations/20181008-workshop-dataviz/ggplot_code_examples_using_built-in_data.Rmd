@@ -1,0 +1,250 @@
+---
+title: "Ggplot Code Examples Using Built-in Data"
+date: "10/5/2018"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+```{r setup}
+library(tidyverse)
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE, eval = TRUE)
+```
+
+# Note to the Reader:
+This R Markdown is meant to provide code reference for visualizations using built-in datasets. Hopefully it helps get you started and gives an idea of what ggplot can do. One note for almost all of the plots, I like to throw `theme_minimal` in all of my plots to get rid of the default ugly gray ggplot background.  
+
+# Using the mpg Data Set
+### This data set contains a subset of the fuel economy data that the EPA makes available. It contains only models which had a new release every year between 1999 and 2008.  
+
+```{r, echo=FALSE, results='asis'}
+kable(mpg[1:5,], caption = "A look at the mpg data set")
+```
+
+We're going to plot the city miles per gallon in a box plot by class.  
+```{r}
+ggplot(data = mpg, aes(x = class, y = cty)) +
+  geom_boxplot() +
+  theme_minimal()
+```
+
+Unsurprisingly, compact and subcompact get higher gas mileage and pickups and SUVs get lower gas mileage. Let's see how the `drv` variable affects this. In `drv`, `4` means four-wheel-drive, `f` means front-wheel-drive, and `r` means rear-wheel-drive. To see how `drv` affects this, we will create a faceted plot, where four-wheel-drive, front-wheel-drive, and rear-wheel-drive are plotted out separately. This is done with the `facet_wrap` command. We tell it to facet on the `drv` variable using `~drv`.  
+```{r}
+ggplot(data = mpg, aes(x = class, y = cty)) +
+  geom_boxplot() +
+  facet_wrap(~drv) +
+  theme_minimal()
+```
+
+Seems front-wheel-drive cars get the best gas mileage. However, now our x-axis class labels are illegible. Let's rotate them 90 degrees so they are easy to read. We do this inside the `theme` function. Many things can be adjusted within `theme`, including many aspects of the x and y axis, legend, lines, and margins. Run `?theme` to see other arguments. Note the use of `element_text()`. This is one of four "theme elements," which will be explained further below.  
+```{r}
+cars + theme(panel.background = element_rect(fill = "ivory"), 
+    legend.position = c(0.8, 0.5)) +labs(title = "My favorite plot!", x = "Class", 
+    y = "City") <-ggplot(data = mpg, aes(x = class, y = cty,color=class)) +
+  geom_boxplot() +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+Let's give it color. We have to tell it how the colors should be assigned, so we add `color = class` to the `aes` function.  
+```{r}
+ggplot(data = mpg, aes(x = class, y = cty, color = class)) +
+  geom_boxplot() +
+  facet_wrap(~drv) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+If we don't like the default colors, we can manually set them. First let's make a palette vector so we can reuse the palette on any later plots if we choose. This palette is a colorblind-friendly palette.  
+```{r}
+#set colorblind-friendly palette 
+cbPalette <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+#rainbow palette
+rainbow_palette <- c("red", "orange", "yellow", "green", "blue", "purple", "gray")
+```
+
+We use `scale_color_manual` to manually set colors and `values = cbPalette` to use the colors we set earlier.  
+```{r}
+ggplot(data = mpg, aes(x = class, y = cty, color = class)) +
+  geom_boxplot() +
+  facet_wrap(~drv) +
+  scale_color_manual(values = cbPalette) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+If we decide color should not be mapped to a variable and just want the entire plot to be say, blue, we can do that too. Inside `geom_boxplot` we just set `color = "blue"`.  
+```{r}
+ggplot(data = mpg, aes(x = class, y = cty)) +
+  geom_boxplot(color = "blue") +
+  facet_wrap(~drv) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+So far we have changed the color that the box plots are drawn in, but we could also choose to fill them in with color instead. We still need to tell ggplot what the colors will be assigned to, so instead of `color = class` we use `fill = class` within `aes()`. 
+```{r}
+ggplot(data = mpg, aes(x = class, y = cty, fill = class)) +
+  geom_boxplot() +
+  facet_wrap(~drv) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+And if we wanted to use our pre-set `cbPalette` colors, we would use `scale_fill_manual` rather than `scale_color_manual`.
+```{r}
+ggplot(data = mpg, aes(x = class, y = cty, fill = class)) +
+  geom_boxplot() +
+  facet_wrap(~drv) +
+  scale_fill_manual(values = cbPalette) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+An alternative option to rotating the x-axis labels would be to rotate the entire plot with `coord_flip`. This function can be used on any plot.  
+```{r}
+ggplot(data = mpg, aes(x = class, y = cty, color = class)) +
+  geom_boxplot() +
+  facet_wrap(~drv) +
+  scale_color_manual(values = cbPalette) +
+  theme_minimal() +
+  coord_flip()
+```
+
+R has many shades in every color so you can choose your own palette by referring to a cheatsheet such as this one: https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf or if you run `colors()` in R it will list all of the color names. R also has many pre-set color palettes you will see in the cheat sheet that are ready to use.  
+
+Let's quickly go back to our base mpg box plot of `class` vs `cty` to see more of `theme`.  
+```{r}
+ggplot(data = mpg, aes(x = class, y = cty)) +
+  geom_boxplot() 
+```
+
+Here we change the axes within `theme`.  Note the use of `element_line()`. Within `theme()` there are "theme elements":`element_line()` for lines, `element_rect()` for borders and backgrounds, `element_text()` for text, and `element_blank()` which draws nothing and assigns no space.  These `element_` functions specify how non-data components of plots are drawn. We already saw `element_text` above when we rotated the x axis labels.
+```{r}
+ggplot(data = mpg, aes(x = class, y = cty)) +
+  geom_boxplot() +
+  theme(axis.line = element_line(size = 0.5, linetype = "dashed",
+                                   colour = "red"))
+```
+
+Here we get rid of the x axis text with `axis.text.x = element_blank()`. Remember, the `element_blank()` funtion draws nothing and assigns no space, essentially getting rid of whatever it is assigned to.    
+```{r}
+ggplot(data = mpg, aes(x = class, y = cty)) +
+  geom_boxplot() +
+  theme(axis.text.x = element_blank())
+```
+
+An example of `element_rect` use.
+```{r}
+ggplot(data = mpg, aes(x = class, y = cty)) +
+  geom_boxplot() +
+  theme(plot.background = element_rect(fill = "light blue"))
+```
+
+# Using the diamonds Data Set
+### A data set containing the prices and other attributes of almost 54,000 diamonds  
+
+```{r, echo=FALSE, results='asis'}
+kable(diamonds[1:5,], caption = "A look at the diamonds data set")
+```
+
+Let's take a look at how many diamonds are in each level of cut with a simple bar plot. We'll also add color with `fill = cut` so each bar is a different color. To demonstrate titles, I have also used `ggtitle`, which simply takes a string input to create a title.   
+```{r}
+ggplot(data = diamonds, aes(x = cut, fill = cut)) +
+  geom_bar() +
+  ggtitle("Number of Diamonds in Each Cut") +
+  theme_minimal()
+```
+
+Maybe we're curious about what proportion of each cut is what level of clarity. Let's check out a stacked bar plot using `fill = clarity`.  
+```{r}
+ggplot(data = diamonds, aes(x = cut, fill = clarity)) +
+  geom_bar() +
+  theme_minimal()
+```
+
+The stacked bar plot is cool to see proportion, but maybe we want to make it easier to make direct comparisons between different cuts. Let's separate each portion into its own bar. This is done within the `geom_bar` function with `position = "dodge"`.  
+```{r}
+ggplot(data = diamonds, aes(x = cut, fill = clarity)) +
+  geom_bar(position = "dodge") +
+  theme_minimal()
+```
+
+# Using the Oranga Data Set
+### This data set tracks the growth of the circumference of five individual orange trees at ages 118, 484, 664, 1004, 1231, 1372, and 1582.
+
+```{r, echo=FALSE, results='asis'}
+kable(Orange[1:5,], caption = "A look at the Orange data set")
+```
+
+First we'll take a look at how each individual orange tree grew over time. This will be done in a line plot where each line is an individual tree. In order to separate the data into five different lines we need to add a `group = Tree` argument to the `aes` function. This tells ggplot to treat each tree (each differently designated tree in variable `Tree`) as its own group and plot it separately. To get each line to show up as a different color, `color = Tree` is also put into `aes()`.  
+```{r}
+ggplot(Orange, aes(x = age, y = circumference, group = Tree, color = Tree)) +
+geom_line() +
+theme_minimal()
+```
+
+Let's take a look at each tree's individual growth versus a box plot of all trees' growth so we can compare each tree to the median and quartiles. To do this we will use two different geoms on the same plot. Note that order here matters. In this plot, `geom_boxplot` comes before `geom_line` so that the lines show up on top of the box plots. Had the order been switched, parts of the lines would be obscured by the box plots because the box plots would have been plotted after the lines and would have therefore been placed on top. Also note that the aesthetics (the arguments within `aes()`) are different for the box and line geoms. We have three separate `aes()` functions in the code for this plot. An `aes()` within `ggplot()` sets the defaults for the entire plot, so `age` is plotted on the x axis and `circumference` is plotted on the y axis for both `geom_boxplot` and `geom_line`. In `geom_boxplot()` we have `aes(group = age)` which tells `geom_boxplot` to group the data by `age` so that a boxplot is generated for each `age` in the data set. In `geom_line()` we have `aes(group = Tree, color = Tree)` so `group = Tree` tells `geom_line` to group the data by `Tree` so that each individual tree gets its own line, and `color = Tree` tells `geom_line` to assign a color to each tree, so that each line shows up a different color. The take home message is that `aes()` can be moved around. If `aes()` is placed within `ggplot()`, those arguments will be the default for the whole plot and will be used in each `geom_` function in the plot unless new overriding arguments are given to that particular `geom`. If `aes()` is placed within a `geom_` function, those arguments will be used only for that `geom` layer. See next plot for partial illustration of this concept.  
+```{r}
+ggplot(Orange, aes(x = age, y = circumference)) +
+geom_boxplot(aes(group = age)) +
+geom_line(aes(group = Tree, color = Tree)) +
+theme_minimal()
+```
+
+Here we are making the exact same plot as above but we have moved the code around a bit. We specified `group = Tree` within `ggplot()`, so it is the default for the plot, and thus `geom_line` plots a separate line for each tree in the data. However, `geom_boxplot` has `aes(group = age)` in it so it overrides the default and therefore does not make a boxplot for each `Tree`, but a boxplot for each `age` in the data. Also, since only `geom_line` has a color argument, only the lines have colors. Try moving these arguments around yourself!  
+```{r}
+ggplot(Orange, aes(x = age, y = circumference, group = Tree)) +
+geom_boxplot(aes(group = age)) +
+geom_line(aes(color = Tree)) +
+theme_minimal()
+```
+
+# Using Iris Data Set
+### This data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris.
+
+```{r, echo=FALSE, results='asis'}
+kable(iris[1:5,], caption = "A look at the iris data set")
+```
+
+We will plot Petal.Width vs Petal.Length in a scatter plot using `geom_point`.
+```{r}
+ggplot(data = iris, aes(x = Petal.Width, y = Petal.Length)) +
+  geom_point() +
+  theme_minimal()
+```
+
+If we're curious about how Sepal.Length fits into this as well, we can set another aesthetic to show it. If we use `color` on a continuous variable, ggplot will create a gradient scale. 
+```{r}
+ggplot(data = iris, aes(x = Petal.Width, y = Petal.Length, color = Sepal.Length)) +
+  geom_point() +
+  theme_minimal()
+```
+
+We could've used size to show Sepal.Length as well.
+```{r}
+ggplot(data = iris, aes(x = Petal.Width, y = Petal.Length, size = Sepal.Length)) +
+  geom_point() +
+  theme_minimal()
+```
+
+There's a lot of overlap using size so it's not a very good plot. However, we can make the points semi-transparent using `alpha =` some number less than 1 within `geom_point`. The lower the number, the more transparent the point. 
+```{r}
+ggplot(data = iris, aes(x = Petal.Width, y = Petal.Length, size= Sepal.Length)) +
+  geom_point(alpha = 0.25) +
+  theme_minimal()
+```
+
+# Resources for ggplot visualizations
+
+#### Color Cheatsheet: 
+https://www.nceas.ucsb.edu/~frazier/RSpatialGuides/colorPaletteCheatsheet.pdf
+
+#### Hadley Wickham's ggplot2 book:
+http://moderngraphics11.pbworks.com/f/ggplot2-Book09hWickham.pdf
+
+#### Cookbook for R: graphs
+http://www.cookbook-r.com/Graphs/
+
+
+
