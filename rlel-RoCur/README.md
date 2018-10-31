@@ -55,4 +55,4 @@ Individuals may sign up to be a curator via **[this form](https://tinyurl.com/rl
 Contact Us
 ----------
 
-This RoCur is managed by R-Ladies East Lansing members. You can email us at <eastlansing@rladies.org> or at the **\#social-media** channel on the [R-Ladies East Lansing Community Slack](https://rladies-eastlansing.slack.com).
+This RoCur is managed by R-Ladies East Lansing members. You can reach us via email (<eastlansing@rladies.org>) or the [R-Ladies East Lansing Community Slack](https://rladies-eastlansing.slack.com) (**\#social-media** channel).
