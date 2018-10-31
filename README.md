@@ -9,15 +9,16 @@ R-Ladies East Lansing welcomes members of **all R proficiency levels**, whether 
 
 ## How to be in touch?
 
-* **Meetup**: <https://www.meetup.com/rladies-east-lansing/> (_for upcoming meetings/schedules_)
-* **Slack**: <https://rladies-eastlansing.slack.com> (_for R-discussions_; easy signup with `@msu.edu`, `@rladies.org`)
-* **GitHub**: [@RLadies-EastLansing](https://github.com/RLadies-EastLansing) (_for presentations, material_)
-* **Social Media**: Twitter [@RLadiesELansing](www.twitter.com/RLadiesELansing) & [@RLadiesGlobal](www.twitter.com/RLadiesGlobal) | [Facebook](www.facebook.com/rladieseastlansing) (_for the latest updates_)
-* **E-mail**: eastlansing [at] rladies [dot] org; info [at] rladies [dot] org (_for sponsorship, other questions!_)
+* **Meetup** | <https://www.meetup.com/rladies-eastlansing/> (_for upcoming meetings/schedules_)
+* **Slack** | <https://rladies-eastlansing.slack.com> (_for R-discussions_; easy signup with `@msu.edu`, `@rladies.org`)
+* **GitHub** | [@RLadies-EastLansing](https://github.com/RLadies-EastLansing) (_for presentations, material_)
+* **Social Media** | Twitter [@RLadiesELansing](www.twitter.com/RLadiesELansing) & [@RLadiesGlobal](www.twitter.com/RLadiesGlobal) • Facebook [@RLadiesEastLansing](www.facebook.com/rladieseastlansing) (_for the latest updates_)
+* **E-mail** | eastlansing [at] rladies [dot] org; info [at] rladies [dot] org (_for sponsorship, other questions!_)
 
 * Getting started survey for new members: https://bit.ly/rlel-gettingstarted
 
 ## Organizers:
-Janani Ravi: [Email](mailto:jananiravi@rladies.org) | [Twitter](www.twitter.com/janani137) | [Webpage](jananiravi.github.io)
 
-Camille Archer: [Email](mailto:camille@rladies.org) | [Twitter](www.twitter.com/CamilleArcher5) | [Facebook](facebook.com/archerc5)
+Janani Ravi | [Email](mailto:jananiravi@rladies.org) | [Twitter](www.twitter.com/janani137) | [Webpage](jananiravi.github.io)
+
+Camille Archer | [Email](mailto:camille@rladies.org) | [Twitter](www.twitter.com/CamilleArcher5) | [Facebook](facebook.com/archerc5)
