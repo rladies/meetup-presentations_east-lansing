@@ -4,7 +4,7 @@
 About
 -----
 
-The **[R-Ladies East Lansing RoCur (Rotating Curation)](https://twitter.com/RLadiesELansing)** is a twitter handle that will feature an awesome R-Lady each week. This account is run by R-Ladies East Lansing.
+The **[R-Ladies East Lansing RoCur (Rotating Curation)](https://twitter.com/RLadiesELansing)** is a twitter handle that will feature an awesome R-Lady each week. This account is currently run by the [_R-Ladies East Lansing_ team](https://rladies-eastlansing.github.io).
 
 Objectives
 ----------
@@ -39,7 +39,7 @@ We are always looking for R-users to be a featured curator for our account! Ever
 
 -   Curators must identify as female or non-binary.
 -   Curators do not need to be affiliated with R-Ladies East Lansing; however, curators need to register in the [R-Ladies directory](https://rladies.org/directory/) if they haven’t yet.
--   Curators must be individuals (i.e. an R-Ladies Chapter cannot be a featured curator; however, an organizer from a local chapter may curate and tweet about chapter events).
+-   Curators must be individuals (i.e. an R-Ladies Chapter cannot be a featured curator; however, an organizer from our/other local chapters may curate and tweet about chapter events).
 -   By signing on to be a curator of @RLadiesELansing you agree to our Curator Agreement that is outlined in our [RoCur Curator Guide](https://tinyurl.com/rlel-rocur-guide).
 
 Curator Sign Up
@@ -55,4 +55,4 @@ Individuals may sign up to be a curator via **[this form](https://tinyurl.com/rl
 Contact Us
 ----------
 
-This RoCur is managed by R-Ladies East Lansing members. You can email us at <eastlansing@rladies.org> or at the **\#social-media** channel on the [R-Ladies East Lansing Community Slack]().
+This RoCur is managed by R-Ladies East Lansing members. You can email us at <eastlansing@rladies.org> or at the **\#social-media** channel on the [R-Ladies East Lansing Community Slack](https://rladies-eastlansing.slack.com).
