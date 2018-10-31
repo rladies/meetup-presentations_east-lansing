@@ -10,13 +10,13 @@ R-Ladies East Lansing welcomes members of **all R proficiency levels**, whether 
 * **Meetup**: <https://www.meetup.com/rladies-eastlansing/> (_for upcoming meetings/schedules_)
 * **Slack**: <https://rladies-eastlansing.slack.com> (_for R-discussions_; easy signup with `@msu.edu`, `@rladies.org`)
 * **GitHub**: [@RLadies-EastLansing](https://github.com/RLadies-EastLansing) (_for presentations, material_)
-* **Social Media**: Twitter [@RLadiesELansing](www.twitter.com/RLadiesELansing) & [@RLadiesGlobal](www.twitter.com/RLadiesGlobal) • Facebook [@RLadiesEastLansing](www.facebook.com/rladieseastlansing) (_for the latest updates_)
+* **Social Media**: Twitter [@RLadiesELansing](www.twitter.com/RLadiesELansing) • Facebook [@RLadiesEastLansing](www.facebook.com/rladieseastlansing) (_for the latest updates_)
 * **E-mail**: eastlansing [at] rladies [dot] org; info [at] rladies [dot] org (_for sponsorship, other questions!_)
 
 * Getting started survey for new members: https://bit.ly/rlel-gettingstarted
 
 ## Next Meetup on Nov 5 '18: Workshop on Intro to Tidy Data
-<img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-planning-promos/201811-Meetup-flyer.png?raw=true" width="70%" />
+<img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-planning-promos/201811-Meetup-flyer.png?raw=true" width="60%" />
 
 ## Organizers:
 
