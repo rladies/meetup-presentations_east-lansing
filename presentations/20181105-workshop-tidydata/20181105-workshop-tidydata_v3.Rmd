@@ -29,37 +29,36 @@ knitr::opts_chunk$set(
 ```
 
 # Part 1: Getting Started
+
+You can access all relevant material pertaining to the **2018-11-05 Introduction to Tidy Data w/ R workshop** here on [GitHub](https://bit.ly/rlel-github-meetup) or [Google Drive](https://bit.ly/rlel-gdrive-meetup) >> `presentations` >> `20181105-workshop-tidydata`
+
 ## Installation and set-up
 ### Install RStudio
 
-**RStudio 1.1.463**
+[**RStudio 1.1.463**](http://rstudio.com/download)
 
-http://rstudio.com/download
 
-*Tour of RStudio IDE:*
+*New to RStudio IDE?*
 
 https://www.rstudio.com/products/rstudio/#Desktop
 https://www.rstudio.com/products/rstudio/features/
 
-*Want to try the latest 'Preview version of RStudio?*
 
-**RStudio v1.2.1086**
+*Want to try the latest 'Preview' version of RStudio?*
 
-https://www.rstudio.com/products/rstudio/download/preview/
+[**RStudio v1.2.1086**]((https://www.rstudio.com/products/rstudio/download/preview/))
+
 
 ### Install R
-... if you haven't already!
-The RStudio startup message should contain your current local version of R.
+*... if you haven't already!*
+The RStudio startup message should specify your current local version of R.
 
 **R v3.5.1**
+[Download R](https://cran.mtu.edu/)
 
-https://cran.mtu.edu/
+[*Want to update to the latest version of R?*](https://www.linkedin.com/pulse/3-methods-update-r-rstudio-windows-mac-woratana-ngarmtrakulchol)
 
-*Want to update to the latest version of R?*
-https://www.linkedin.com/pulse/3-methods-update-r-rstudio-windows-mac-woratana-ngarmtrakulchol
-
-A Windows-specific solution:
-https://www.r-statistics.com/2015/06/a-step-by-step-screenshots-tutorial-for-upgrading-r-on-windows/
+[A Windows-specific solution](https://www.r-statistics.com/2015/06/a-step-by-step-screenshots-tutorial-for-upgrading-r-on-windows/)
 
 ### Install tidyverse & other datasets
 ```{r installation, eval=F, echo=T}
@@ -71,7 +70,7 @@ install.packages("gapminder") # sample dataset
 
 - Check your R/RStudio versions
 - For the time-being install the individual packages using `install.packages("PACKAGENAME")`
-- Check out the whole `tidyverse` suite of packages here: https://www.tidyverse.org/packages/
+- Check out the whole `tidyverse` suite of packages [here](https://www.tidyverse.org/packages/)
 
 ```{r tidyverse, eval=FALSE,echo=TRUE}
 install.packages("readr")	# Importing data files
@@ -94,6 +93,12 @@ library(tidyverse)
 library(gapminder)
 ```
 
+## Some useful Cheatsheets
+[Cheatsheets @RStudio](https://www.rstudio.com/resources/cheatsheets/)
+
+You can also access all relevant R/RStudio/Slack cheatsheets on our [GitHub repo](https://bit.ly/rlel-github-meetup) or [Google Drive folder](https://bit.ly/rlel-gdrive-meetup) >> `cheatsheets`
+
+
 ## Data import
 ```{r data-import, eval=FALSE, echo=TRUE}
 library(tidyverse)
@@ -111,15 +116,18 @@ readxl::read_excel(path="path/to/excel.xls",
 
 ## Loading existing datasets
 We will work with the Gapminder dataset by Hans Rosling
+### Gapminder
+*Unveiling the beauty of statistics for a fact based world view.*
+[Gapminder.org](https://www.gapminder.org/)
 
-### Gapminder:  Unveiling the beauty of statistics for a fact based world view.
-https://www.gapminder.org/
+[*Hans Rosling's TED talks*](https://www.ted.com/playlists/474/the_best_hans_rosling_talks_yo)
 
-Hans Rosling's TED talks:
-https://www.ted.com/playlists/474/the_best_hans_rosling_talks_yo
+[Their Data](https://www.gapminder.org/data/)
 
+[Tools to generate their trademark bubble charts](https://www.gapminder.org/tools/#$chart-type=bubbles)
 
-![](https://gcn.com/~/media/GIG/GCN/Redesign/Articles/2017/March/bubble.png){width=50%}
+Snapshot of their data
+![](https://s3-eu-west-1.amazonaws.com/static.gapminder.org/GapminderMedia/wp-uploads/20161007154225/countries_health_wealth_2016_v71.png){width=50%}
 
 ## Knowing your data
 
@@ -175,15 +183,16 @@ my_data
 
 
 ## Gather
-##Gather Columns Into Key-Value Pairs.
+**Takes multiple columns, and gathers them into key-value pairs: it makes “wide” data longer.**
+
 ```{r gather, echo=T, eval=T}
-#Gather all columns except the column state
+# Gather all columns except the column state
 my_data2 <- gather(my_data,
                    key = "arrest_attribute",
                    value = "arrest_estimate",
                    -state)
 my_data2
-#Gather only Murder and Assault columns
+# Gather only Murder and Assault columns
 my_data2 <- gather(my_data,
                    key = "arrest_attribute",
                    value = "arrest_estimate",
@@ -192,20 +201,22 @@ my_data2
 ```
 
 ## Spread
+**Takes two columns (key & value), and spreads into multiple columns: it makes “long” data wider.**
+
 ```{r spread, echo=T, eval=T}
-#Spread "my_data2" to turn back to the original data:
+# Spread "my_data2" to turn back to the original data:
 my_data3 <- spread(my_data2, 
                    key = "arrest_attribute",
                    value = "arrest_estimate"
                    )
 my_data3
-
 ```
 
 ## Unite
-##Unite multiple columns into one
+**Collapse cells across several columns into one column**
+
 ```{r unite, echo=T, eval=T}
-#The R code below uses the data set "my_data" and unites the columns Murder and Assault
+# The R code below uses the data set "my_data" and unites the columns Murder and Assault
 my_data4 <- unite(my_data,
                   col = "Murder_Assault",
                   Murder, Assault,
@@ -214,9 +225,9 @@ my_data4
 
 ```
 
-
 ## Separate
-##separate one column into multiple
+**Separate each cell in a column to make multiple columns**
+
 ```{r separate, echo=T, eval=T}
 separate(my_data4,
          col = "Murder_Assault",
@@ -249,7 +260,8 @@ gapminder %>%	# Pipe ('then') operator to serially connect operations
 	filter(year==1962)
 # Filter for China in 2002
 gapminder %>%
-  filter(year==2002,country=="China")
+  filter(year==2002,
+  			 country=="China")
 ```
 
 ## Select
@@ -420,6 +432,7 @@ animated_plot <- ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = 
 animated_plot
 ```
 
+***
 # Part 5: Export & Wrap-up
 ## Saving your plots
 ### ggsave
@@ -494,7 +507,7 @@ write_delim(x=my_newly_formatted_data,
 | `kable`     | Create tables in LaTeX, HTML, Markdown and reStructuredText                                |
 | `paged_table`| AAAAAAAAAAAAAAAAAAA                               |
 | **tidyr**                                                        |
-| `gather`    | Gather COLS -> ROWS                                |
+| `gather`    | Gather Columns Into Key-Value Pairs (COLS -> ROWS) |
 | `spread`    | Spread ROWS -> COLS                                |
 | `separate`  | separate 1 COL -> many COLS                        |
 | `unite`     |  unite several COLS -> 1 COL                       |
@@ -517,3 +530,7 @@ write_delim(x=my_newly_formatted_data,
 | `write_delim`| AAAAAAAAAAAAAAAAAAA                               |
 :::
 
+***
+
+## Questions? Comments?
+Please ping us on Slack: rladies-eastlansing.slack.com OR Email us: eastlansing@rladies.org
