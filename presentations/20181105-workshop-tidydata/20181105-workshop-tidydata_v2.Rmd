@@ -1,0 +1,428 @@
+---
+title: "Introduction to Tidy Data w/ R"
+description: |
+  RMarkdown file to accompany the 2018-11-05 workshop presentation
+author:
+  - name: Janani Ravi
+    url: https://jananiravi.github.io
+    affiliation: RLadiesEastLansing | Pathobiology & Diagnostic Investigation, MSU
+    affiliation_url: https://rladies-eastlansing.github.io
+  - name: Nafiseh Haghtalab
+    url: https://haghtalab.wordpress.com/about/
+    affiliation: Geography, MSU
+    affiliation_url: https://geo.msu.edu
+date: "`r Sys.Date()`"
+output:
+  radix::radix_article:
+    toc: TRUE
+    toc_depth: 3
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = TRUE,
+	warning = TRUE,
+	message = TRUE,
+	# comment = "##",
+	R.options = list(width = 60)
+)
+```
+
+# Part 1: Getting Started
+## Installation and set-up
+### Install RStudio
+http://rstudio.com/download
+
+### Install tidyverse & other datasets
+```{r installation, eval=F, echo=T}
+install.packages("tidyverse")
+install.packages("gapminder")
+```
+
+### Load tidyverse & other datasets
+```{r loading, eval=TRUE, echo=TRUE}
+library(tidyverse)
+library(gapminder)
+```
+
+## Data import
+```{r data-import, eval=FALSE, echo=TRUE}
+library(tidyverse)
+read_csv(file="my_data.csv",
+				 col_names=T)		# comma-separated values, as exported from excel/spreadsheets
+read_delim(file="my_data.txt", col_names=T,
+					 delim="//")	# any delimitter
+# Other useful packages
+# readxl by Jenny Bryan
+readxl::read_excel(path="path/to/excel.xls",
+									 sheet=1,
+									 range="A1:D50",
+									 col_names=T)
+```
+
+## Loading existing datasets
+We will work with the Gapminder dataset by Hans Rosling
+
+### Gapminder:  Unveiling the beauty of statistics for a fact based world view.
+https://www.gapminder.org/
+
+Hans Rosling's TED talks:
+https://www.ted.com/playlists/474/the_best_hans_rosling_talks_yo
+
+
+![](https://gcn.com/~/media/GIG/GCN/Redesign/Articles/2017/March/bubble.png){width=50%}
+
+## Knowing your data
+
+```{r data-str, echo=TRUE, eval=F}
+# gapminder::gapminder
+str(gapminder)		# Structure of the dataframe
+gapminder 			# Data is in a cleaend up 'tibble' format by default
+head(gapminder)		# Shows the top few observations (rows) of your data frame
+glimpse(gapminder)	# Info-dense summary of the data
+View(gapminder)		# View data in a visual GUI-based spreadsheet-like format
+```
+### Running the code bit step-wise
+```{r data-str-run, echo=TRUE, eval=T}
+# gapminder::gapminder
+str(gapminder)		# Structure of the dataframe
+gapminder 			# Data is in a cleaend up 'tibble' format by default
+head(gapminder)		# Shows the top few observations (rows) of your data frame
+glimpse(gapminder)	# Info-dense summary of the data
+View(gapminder)		# View data in a visual GUI-based spreadsheet-like format
+```
+
+```{r kable, layout="l-body-outset"}
+library(knitr)
+kable(head(gapminder))
+```
+
+```{r paged_table, layout="l-body-outset"}
+library(rmarkdown)
+paged_table(gapminder)
+```
+
+***
+# Part 2: Reshaping data with tidyr
+```{r tidyr, echo=TRUE, eval=FALSE}
+gather()	# Gather COLUMNS -> ROWS
+spread()	# Spread ROWS -> COLUMNS
+separate()	# Separate 1 COLUMN -> many COLUMNS
+unite()		# Unite several COLUMNS -> 1 COLUMN
+```
+
+## Gather
+```{r gather, echo=T, eval=T}
+
+
+```
+
+## Spread
+```{r spread, echo=T, eval=T}
+
+
+```
+
+## Separate
+```{r separate, echo=T, eval=T}
+
+
+```
+
+## Unite
+```{r unite, echo=T, eval=T}
+
+
+```
+
+***
+# Part 3: Data wranging with dplyr
+```{r dplyr, echo=TRUE, eval=FALSE}
+filter()	# PICK observations by their values | ROWS
+select()	# PICK variables by their names | COLUMNS
+mutate()	# CREATE new variables w/ functions of existing variables | COLUMNS
+transmute()	# COMPUTE 1 or more COLUMNS but drop original columns
+arrange()	# REORDER the ROWS
+summarise()	# COLLAPSE many values to a single SUMMARY
+group_by()	# GROUP data into rows with the same value of variable (COLUMN)
+```
+
+## Filter
+```{r filter, echo=TRUE, eval=TRUE}
+head(gapminder)	# Snapshot of the dataframe
+# Now, filter by year and look at only the data from the year 1962
+filter(gapminder, year==1962)
+
+# Can be rewritten using "Piping" %>%
+gapminder %>%	# Pipe ('then') operator to serially connect operations
+	filter(year==1962)
+# Filter for China in 2002
+gapminder %>%
+  filter(year==2002,country=="China")
+```
+
+## Select
+```{r select, echo=T, eval=T}
+gapminder %>%
+	select(year, country, lifeExp)
+```
+
+## Arrange
+```{r arrange, echo=TRUE, eval=TRUE}
+head(gapminder)	# Snapshot of the dataframe
+# Arrange/Sort by Life Expectency
+arrange(gapminder, lifeExp)	# ascending order
+arrange(gapminder, -lifeExp)	# descending order
+
+# Want to rewrite using piping?
+gapminder %>%	# Pipe ('then') operator to serially connect operations
+	arrange(lifeExp)
+
+# Combining two verbs
+gapminder %>%
+	filter(year==2007) %>%
+	arrange(desc(gdpPercap))
+```
+
+## Mutate
+```{r mutate, echo=T, eval=T}
+# library(tidyverse)
+# library(gapminder)
+# Changing existing variables
+gapminder %>%
+	mutate(pop=pop/1000000)
+
+# Use mutate to change lifeExp to be in months
+gapminder %>%
+	mutate(lifeExp = lifeExp * 12)
+
+# Adding new variables
+gapminder %>%
+	mutate(grossgdp = pop * gdpPercap)
+
+# Combing 3 verbs
+gapminder %>%
+	mutate(grossgdp = pop * gdpPercap) %>%
+	filter(year==2007) %>%
+	arrange(desc(grossgdp))
+```
+
+
+## Summarize
+```{r summarize, eval=TRUE, echo=TRUE}
+# Finding mean life exp across all years all continents
+gapminder %>%
+	summarize(meanLifeExp = mean(lifeExp))
+
+# Summarize to find the median life expectancy
+gapminder %>%
+	summarize(medianLifeExp = median(lifeExp))
+
+# Avg life Exp and total pop in 2007
+gapminder %>%
+	filter(year==2007) %>%
+	summarize(meanLifeExp = mean(lifeExp),
+						totalPop = sum(as.numeric(pop)))
+
+# Filter for 1957 then summarize the median life expectancy
+gapminder %>%
+	filter(year==1957) %>%
+	summarize(medianLifeExp = median(lifeExp))
+
+# Avg life Exp and total pop in each year
+gapminder %>%
+	group_by(year) %>%
+	summarize(meanLifeExp = mean(lifeExp),
+						totalPop =  sum(as.numeric(pop)))
+
+# Avg life Exp and total pop in each year and contient
+gapminder %>%
+	group_by(year,continent) %>% 
+  summarize(meanLifeExp = mean(lifeExp),
+  					totalPop = sum(as.numeric(pop)))
+
+```
+
+***
+# Part 4: Visualizing tidy data with ggplot
+## Recap of ggplot2
+```{r recap-ggplot, echo=T, eval=T}
+# Add the size aesthetic to represent a country's gdpPercap
+gapminder_1952 <- gapminder %>%
+	filter(year==1952)
+
+ggplot(gapminder_1952,
+			 aes(x = pop, y = lifeExp,
+			 		color = continent, size=gdpPercap)) +
+	geom_point() +
+	scale_x_log10()
+
+# Instead of showing all categorical variables in one plot , we can have 5 different plots in one plot using faceting
+gapminder_2007 <- gapminder %>%
+	filter(year==2007)
+
+ggplot(data=gapminder_2007,
+			 aes(x=gdpPercap,y=lifeExp)) +
+	geom_point() + 
+	scale_x_log10() + 
+	facet_wrap(~continent)
+
+# Scatter plot comparing gdpPercap and lifeExp, with color representing continent
+# and size representing population, faceted by year
+ggplot(data=gapminder,
+			 aes(x=gdpPercap,y=lifeExp,
+			 		color=continent, size = pop)) +
+	geom_point() + 
+	scale_x_log10() + 
+	facet_wrap(~year)
+
+
+by_year <- gapminder %>%
+	group_by(year) %>% 
+	summarize(meanLifeExp = mean(lifeExp),
+						totalPop = sum(as.numeric(pop)))
+
+by_year_continent <- gapminder %>%
+	group_by(year,continent) %>% 
+	summarize(meanLifeExp = mean(lifeExp),
+						totalPop =sum(as.numeric(pop)))
+
+# Visualizing population over time
+ggplot(data=by_year,
+			 aes(x=year,y=totalPop)) +
+	geom_point()
+
+# Visualizing population over time,starting at zero, for each continent
+ggplot(data=by_year_continent,
+			 aes(x=year,y=totalPop,color=continent)) +
+	geom_point() +
+	expand_limits(y=0)
+
+```
+
+
+## gganimate
+```{r gapminder-static, layout="l-body-outset", fig.width=5, fig.height=4, echo=TRUE, eval=TRUE}
+library(tidyverse)
+library(gapminder)
+static_plot <- ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = country)) +
+	geom_point(alpha = 0.7, show.legend = FALSE) +
+	scale_colour_manual(values = country_colors) +
+	scale_size(range = c(2, 12)) +
+	scale_x_log10() + theme_minimal() +
+	facet_wrap(~continent)
+static_plot
+```
+
+```{r gapminder-gganimate, layout="l-body-outset", fig.width=5, fig.height=4, echo=TRUE, eval=F}
+library(gganimate)
+animated_plot <- ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = country)) +
+	geom_point(alpha = 0.7, show.legend = FALSE) +
+	scale_colour_manual(values = country_colors) +
+	scale_size(range = c(2, 12)) +
+	scale_x_log10() + theme_minimal() +
+	facet_wrap(~continent) +
+	# Here comes the gganimate specific bits
+	labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'life expectancy') +
+	transition_time(year) +
+	ease_aes('linear')
+animated_plot
+```
+
+# Part 5: Export & Wrap-up
+## Saving your plots
+### ggsave
+```{r ggsave, eval=F, echo=TRUE}
+library(tidyverse)
+# Save your file name
+plot1 <- "my_plot1.tiff"
+
+# Save your absolute/relative path
+my_full_path <- paste(c("~/Google_Drive/Work/GitHub",
+												"/meetup-presentations-eastlansing/presentations/",
+												"20181105-workshop-tidydata"), sep="/")
+
+# To save as a tab-delimited text file ...
+ggsave(filename=plot1,
+			 plot=static_plot,
+			 device="tiff",
+			 path=my_full_path,
+			 dpi=600)
+
+```
+
+## Saving your data files
+### write_delim
+
+```{r write_delim, eval=F, echo=TRUE}
+library(tidyverse)
+# Save your file name
+filename <- "my_new_data.txt"
+
+# Save your absolute/relative path
+my_full_path <- paste(c("~/Google_Drive/Work/GitHub",
+												"/meetup-presentations-eastlansing/presentations/",
+												"20181105-workshop-tidydata"), sep="/")
+
+# To save as a tab-delimited text file ...
+write_tsv(x=my_newly_formatted_data, # your final reformatted dataset
+					path=paste(my_full_path, filename, "/"), # Absolute path recommended.
+					# However, you can directly use 'filename' here
+					# if you are saving the file in the same directory
+					# as your code.
+					col_names=T) # if you want the column names to be
+# saved in the first row, recommended
+
+# Alternatively, you could save it as a comma-separated text file
+write_csv(x=my_newly_formatted_data,
+					path=my_path,
+					col_names=T)
+# Or save it with any other delimiter
+# choose wisely, pick a delim that's not part of your dataframe
+write_delim(x=my_newly_formatted_data,
+						path=my_path,
+						col_names=T,
+						delim="---")
+```
+
+## *What you learnt today!*
+
+::: l-body-outset
+| Option      | Description                                        |
+|-------------|----------------------------------------------------|
+| **Getting Started**                                              |
+| `install.packages`| AAAAAAAAAAAAAAAAAAA                          |
+| `library`   | AAAAAAAAAAAAAAAAAAA                                |
+| `read_csv`  | AAAAAAAAAAAAAAAAAAA                                |
+| `read_delim`| AAAAAAAAAAAAAAAAAAA                                |
+| `read_excel`| AAAAAAAAAAAAAAAAAAA                                |
+| `str`       | AAAAAAAAAAAAAAAAAAA                                |
+| `head`      | AAAAAAAAAAAAAAAAAAA                                |
+| `glimpse`   | AAAAAAAAAAAAAAAAAAA                                |
+| `View`      | AAAAAAAAAAAAAAAAAAA                                |
+| `kable`     | AAAAAAAAAAAAAAAAAAA                                |
+| `paged_table`| AAAAAAAAAAAAAAAAAAA                               |
+| **tidyr**                                                        |
+| `gather`    | Gather COLS -> ROWS                                |
+| `spread`    | Spread ROWS -> COLS                                |
+| `separate`  | separate 1 COL -> many COLS                        |
+| `unite`     |  unite several COLS -> 1 COL                       |
+| **dplyr**                                                        |
+| `filter`    | PICK observations by their values, ROWS            |
+| `select`    | PICK variables by their names, COLS                |
+| `mutate`    | CREATE new variables from existing variables, COLS |
+| `transmute` | COMPUTE 1 or more COLS but drop original cols      |
+| `arrange`   | REORDER the ROWS                                   |
+| `summarise` | COLLAPSE many values to a single SUMMARY           |
+| `group_by`  | GROUP data into rows w/ the same value of variable |
+| `JOINS`  | GROUP data into rows w/ the same value of variable |
+| **ggplot**                                                       |
+| `ggplot`    | PICK observations by their values, ROWS            |
+| `gganimate` | PICK variables by their names, COLS                |
+| **Export & Wrap-up**                                             |
+| `ggsave`    | AAAAAAAAAAAAAAAAAAA                                |
+| `write_tsv` | AAAAAAAAAAAAAAAAAAA                                |
+| `write_csv` | AAAAAAAAAAAAAAAAAAA                                |
+| `write_delim`| AAAAAAAAAAAAAAAAAAA                               |
+:::
+
