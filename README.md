@@ -18,12 +18,12 @@
 * Janani Ravi: [Email](mailto:jananiravi@rladies.org) • [Twitter](www.twitter.com/janani137) • [Webpage](jananiravi.github.io)
 * Camille Archer: [Email](mailto:camille@rladies.org) • [Twitter](www.twitter.com/CamilleArcher5) • [Facebook](facebook.com/archerc5)
 
-## Upcoming Meetup
+## Past Meetups
 ### Workshop on Intro to Tidy Data • Nov 05, 2018
-**RSVP on Meetup**: https://meetup.com/rladies-eastlansing
 <img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-planning-promos/201811-Meetup-flyer.png?raw=true" width="60%" />
 
-## Past Meetup
+Workshop material: [GitHub](https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/tree/master/presentations/20181105-workshop-tidydata) • [Google Drive](https://bit.ly/rlel-20181105)
+
 ### Workshop on Intro to Data Visualization • Oct 08, 2018
 <img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-planning-promos/201810-Meetup-flyer.png?raw=true" width="60%" />
 
