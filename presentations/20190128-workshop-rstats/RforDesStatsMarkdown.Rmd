@@ -1,64 +1,381 @@
 ---
-title: "RLEL_RforDesStats_20190128"
+title: "20190128 | RLEL Workshop: R for Descriptive Stats"
 author: "Miranda Haus"
-date: "January 24, 2019"
-output: html_document
+date: "January 28, 2019"
+output:
+  html_document:
+    toc: TRUE
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## A Quick Intro to R Markdown
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
+### Including code chunks
 ```{r cars}
 summary(cars)
 ```
 
-## Including Plots
-
+### Including Plots
 You can also embed plots, for example:
-
 ```{r pressure, echo=FALSE}
 plot(pressure)
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-
 - Check your R/RStudio versions
 - For the time-being install the individual packages using `install.packages("PACKAGENAME")`
 - Check out the whole `tidyverse` suite of packages [here](https://www.tidyverse.org/packages/)
 
 
-```{install the relevant packages we will use, including our data for today.}
-#eval equals false means it won't run unless
-```{r tidyverse, eval=FALSE,echo=TRUE}
+# Package installation
+Install the relevant packages we will use, including our data for today using the `install.packages`.
+
+We're going to set `eval = FALSE` so that it doesn't run everytime this document is knit.
+
+```{r tidyverse, eval=FALSE, echo=TRUE}
 install.packages("readr")	# Importing data files
 # install.packages("readxl") # Importing excel files
 install.packages("tidyr")	# Tidy Data
 install.packages("dplyr")	# Data manipulation
 install.packages("ggplot2")	# Data Visualization (w/ Grammar of Graphics)
+install.packages("gapminder")
+install.packages("psych")
+# install.packages("vioplot")
+install.packages("here")
 ```
 
 ### Loading packages
 ```{r loading, eval=T, echo=TRUE}
-#eval needs to be true to load libraries below
-#echo = show
+# eval needs to be true to load libraries below
+# echo = T #to show the code
 library(tidyverse)
-# OR load the individual packages:
-library(readr)
- library(readxl)
- library(tidyr)
- library(dplyr)
- library(ggplot2)
+# package to work with tidy data & visualization
 
+# OR load the individual packages:
+#library(readr) # part of tidyverse
+#library(tidyr) # part of tidyverse
+#library(dplyr) # part of tidyverse
+#library(ggplot2) # part of tidyverse
+#library(purrr) # part of tidyverse
+
+library(readxl) # To read Excel files
+library(psych) # has a few useful statistical functions
+
+# library(vioplot) # to make violin plots
+
+library(here) # To find your files; set the working directory
 library(gapminder)
+# Gapminder data: life expectancy, GDP per capita, population by country
 ```
-```{}
-View(gapminder)
+
+
+# Data Exploration
+First things first, look at raw data structure. 
+```{r echo=T, eval=T}
+# View(gapminder)
+# Knowing how your data look overall will help you analzye and organize it.
+# Using base r funciton "str" shows dataype and unique values.
+str(gapminder)
+
+# Compared to tidyverse function "glimpse" shows datatype and lists first few rows.
+glimpse(gapminder)
+
+# We can also look at the first 10 and last 10 rows.
+head(gapminder)
+tail(gapminder)
+
+# "View" will open the dataset in a new tab.
+# View(gapminder)
+
+# If you ever need a reminder of your column names and order, 
+## use the function "colnames".
+colnames(gapminder)
 ```
+
+## Checking for missing data
+Start by checking for missing data using the `summary` function.
+```{r eval=TRUE, echo=TRUE}
+summary(gapminder)
+# if there are missing data points, you will see them in the bottom row, 
+# but only for the variable that is missing data.
+```
+
+The `describe` function in the Psych package gives a more detailed summary
+```{r eval=TRUE, echo=TRUE}
+# And we can compare this to 'psych' package.
+describe(gapminder)
+# Notice what happens with categorical variables
+
+# "attach" - best not to attach; whatif many datasets have the same column names?!
+# attach(gapminder)
+```
+
+# Histogram: to view distributions
+Plot a histogram to look at the distribution of you data.
+```{r echo=TRUE, eval=TRUE}
+gapminder %>%
+  ggplot(aes(x = lifeExp)) +
+  geom_histogram()
+# using base R
+# hist(gapminder$lifeExp)
+```
+
+# Descriptive statistics 101
+```{r eval=TRUE, echo=TRUE}
+# Here, we use the `summary` function again, but this time for a variable, not a dataset.
+# This gives us the a table of basic stats including minimum, median, quartiles, and min/max.
+gapminder %>%
+  pull(lifeExp) %>%
+  summary()
+
+# Use any of these to recall a single descriptor.
+max(gapminder$lifeExp)
+min(gapminder$lifeExp)
+range(gapminder$lifeExp)
+median(gapminder$lifeExp)
+mode(gapminder$lifeExp)
+mean(gapminder$lifeExp)
+quantile(gapminder$lifeExp)
+
+# calculate the mean of selected samples
+mean(gapminder$lifeExp[1:10])
+# we can select the rows the are from Bulgaria
+median(gapminder$lifeExp[1:10])
+# mode does not work for the small data set because no number appears twice
+mode(gapminder$lifeExp[1:10])
+```
+
+
+# Summary Statistics
+There are many ways to get summary statistics by grouping. 
+
+For example, if we wanted to get summary statistics of lifeExp by continent:
+
+## Using base R: `tapply`
+```{r eval=TRUE, echo=TRUE}
+tapply(gapminder$lifeExp,
+       gapminder$continent,
+       summary) 
+```
+
+## Using dplyr: `summarize`
+```{r eval=TRUE, echo=TRUE}
+# Note how we used 'na.rm=TRUE' to remove missing data (if needed).
+gapminder %>% 
+  group_by(continent) %>% 
+  summarize(mean=mean(lifeExp, na.rm=T),
+            median=median(lifeExp, na.rm=T))
+```
+
+## Using purrr: `split` & `map`
+```{r eval=TRUE, echo=TRUE}
+gapminder %>%
+  split(.$continent) %>%
+  map(summary)
+```
+
+## Using psych: `describeBy`
+```{r eval=TRUE, echo=TRUE}
+describeBy(gapminder$lifeExp,
+           gapminder$continent,
+           mat = TRUE)
+```
+
+In short, there are many ways to get the same information, so play around!
+
+# Saving tables
+What if we want to save the table as a file?
+```{r eval=TRUE, echo=TRUE}
+getwd()
+here::here()
+# setwd("C:/Users/Miranda Haus/Documents/RLadies_Workshops")
+describeBy(gapminder$lifeExp,
+           gapminder$continent,
+           mat = TRUE) %>%
+  write.csv(file="test.csv")
+# # alterantively, you can make a new observation and write it instead.
+# test2<-describeBy(gapminder$lifeExp, continent, mat = TRUE)
+# write.csv(test2, "test2.csv")
+```
+
+# Residuals
+You may or may not want to see residuals based on your experience/field/etc.
+```{r eval=TRUE, echo=TRUE}
+qqnorm(gapminder$lifeExp)
+qqline(gapminder$lifeExp)
+```
+
+# Plotting your statistics 
+Let's graph these descriptive statistics so they are interpretable by our readers (e.g. boss, reviewer, etc.)
+## Making boxlots: to view distributions/summary stats/outliers
+```{r eval=T, echo=T}
+gapminder %>%
+  ggplot(aes(x = continent, y = lifeExp)) +
+  geom_boxplot() +
+  xlab("Continent") +
+  ylab("Life Expectancy (years)")
+
+gapminder %>%
+  ggplot(aes(x = reorder(continent, lifeExp, FUN = median),
+             y = lifeExp)) +
+  geom_boxplot() +
+  xlab("Continent") +
+  ylab("Life Expectancy (years)")
+
+gapminder %>%
+  ggplot(aes(x = reorder(continent, lifeExp, FUN = median),
+             y = lifeExp)) +
+  geom_boxplot(notch = T) +
+  xlab("Continent") +
+  ylab("Life Expectancy (years)")
+
+gapminder %>%
+  ggplot(aes(x = reorder(continent, lifeExp, FUN = median),
+             y = lifeExp)) +
+  geom_boxplot(notch = T) +
+  geom_jitter(shape=16, position=position_jitter(0.2), dotsize=0.5, alpha = 0.2) +
+  xlab("Continent") +
+  ylab("Life Expectancy (years)")
+
+## Using base R
+# boxplot(gapminder$lifeExp)
+# Or look at boxplots across group
+# boxplot(gapminder$lifeExp~gapminder$continent)
+# boxplot(gapminder$lifeExp~continent, xlab="Continent", ylab="Life Expectancy (Years)")
+# You can add notches to 
+# boxplot(gapminder$lifeExp~continent, notch=T, xlab="Continent", ylab="Life Expectancy (Years)")
+```
+
+## Finding outliers
+```{r eval=TRUE, echo=TRUE}
+# Now that we know what's common in our data set, let's look at what is uncommon or weird.
+outliers_lifeExp <- boxplot.stats(gapminder$lifeExp)$out # outlier values.
+outliers_lifeExp
+
+# Well... lifeExp doesn't have any outliers. So let's look at a variable that does:
+outliers_pop <- boxplot.stats(gapminder$pop)$out
+outliers_pop
+# Great! But how can I go back to my dataset to find these outliers specifically?
+# Let's create a subset of the data that includes only observations above our minimum outlier.
+min(outliers_pop)
+out.set <-filter(gapminder, pop >= '45598081')
+# View(out.set)
+glimpse(out.set)
+```
+
+
+## Violin plots: for seeing shape of distribution
+Violin plots are more descriptive wasy to visualize box plots.
+```{r eval=T, echo=T}
+# They overlap distrbution and key statistics (e.g. mean, quartiles, etc.)
+gapminder %>%
+  ggplot(aes(x = reorder(continent, lifeExp, FUN = median),
+             y = lifeExp,
+             fill = continent)) +
+  geom_violin() +
+  geom_boxplot(width = 0.1, notch = T, fill = "white") +
+  xlab("Continent") +
+  ylab("Life Expectancy (years)")
+
+## Other ways to create a violin plot ##
+## Using the vioplot package
+# vioplot(gapminder$lifeExp)
+# vioplot(gapminder$lifeExp ~ gapminder$continent)
+
+## Using the psych package
+# violinBy(gapminder$lifeExp)
+```
+
+
+## Correlations & such
+What if we want to look at how two variables interact?
+
+## Using 'psych'
+```{r eval=T, echo=T}
+# note the order of variable changes to get the same plot
+pairs.panels(gapminder)
+# Using 'psych' we can plot histograms on scatterplots.
+scatter.hist(gapminder$lifeExp, gapminder$pop)
+```
+
+## Using GGally
+Similar to the previous function but takes into account the nature of the variable: numerical vs categorical.
+
+```{r eval=TRUE, echo=TRUE}
+# install.packages("GGally")
+library(GGally)
+gapminder %>%
+  select(-country) %>% # Removing countries from this calculation+plotting since there are too many!
+  ggpairs()
+```
+
+Some notes:
+- Associations that are clear:
+  - Life expectancy vs. Continent
+  - GDP per capita vs. Continent
+- Associations that are not so clear:
+  - Life expectancy vs. Population - this requires further exploration!
+
+
+```{r eval=TRUE, echo=TRUE}
+# even with attach, we must still include dataset
+gapminder %>%
+  ggplot(aes(x=pop, y=lifeExp)) +
+  geom_point() # scatterplot
+
+# Over-plotting & data is squished along pop
+gapminder %>%
+  ggplot(aes(x = pop, y = lifeExp)) +
+  geom_point(size = 0.5, alpha = 0.2) + # scatterplot w/ transparency, adjusting size
+  scale_x_log10() + # log x-axis
+  geom_smooth(method = "lm") +
+  theme_bw() # simple b/w background, not the usual grey
+
+# Overall correlation between population & life expectancy
+cor(gapminder$pop, gapminder$lifeExp)
+
+# What about by country?
+gapminder %>%
+  ggplot(aes(x = pop, y = lifeExp,
+             color = country, fill = country)) + # coloring by countries
+  facet_wrap(~continent, scales= "free_x") + # split plots by continent
+  geom_point(shape = 21, size = 1, alpha = 0.5) + # scatterplot, adjusting shape of the point, size and transparency
+  scale_x_log10() + # log x-axis
+  theme_bw() + # simple b/w background, not the usual grey
+  theme(legend.position="none") # removing legend
+
+# Specific countries
+gapminder %>%
+  filter(country %in% c("Austria", "Bangladesh")) %>%
+  ggplot(aes(x = pop, y = lifeExp,
+             color = country, fill = country)) + # coloring by countries
+  facet_wrap(~country, scales = "free") + # split plots by continent; independent scales
+  geom_point(shape = 21, size = 1, alpha = 0.5) + # scatterplot, adjusting shape of the point, size and transparency
+  scale_x_log10() + # log x-axis
+  geom_smooth(method = "lm", size = 1) +
+  theme_bw() + # simple b/w background, not the usual grey
+  theme(legend.position="none")
+
+gapminder %>%
+  group_by(country) %>%
+  summarize(corr = cor(pop, lifeExp)) %>%
+  ggplot(aes(x = corr)) +
+  geom_histogram(color = "black", fill = "grey80") +
+  geom_density(color = "blue") +
+  theme_bw()
+
+## using base R
+# plot(gapminder$pop, gapminder$lifeExp)
+```
+
+# Saving plots
+## Using ggsave
+Google & try out later!
