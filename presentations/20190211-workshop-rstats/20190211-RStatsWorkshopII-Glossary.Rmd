@@ -1,0 +1,53 @@
+---
+title: "20190211-RStatsWorkshopII-Glossary"
+author: "Sarah Goodwin"
+date: "2/9/2019"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+## *What you learnt today!*
+
+::: l-body-outset
+| Option      | Description                                        |
+|-------------|----------------------------------------------------|
+|    | **Installation & Loading of Packages**                          |
+| `install.packages`| Download and install packages from CRAN-like repositories or from local files |
+| `library`   | Library and require load and attach add-on packages|
+| | **Using Existing Data OR Loading Yours**                         |
+| `read_csv`  | Read a CSV (comma-separated) data file             |
+| `read_excel`| Read xls and xlsx files                            |
+| | **Viewing Structure of your Data**                               |
+| `str`       | Display the internal structure of an R object; e.g., whether it is stored as a factor (categorical) variable, numeric, or other type of data|
+| `glimpse`   | Get a glimpse of your data                         |
+| `summary`   | View simple summary values                         |
+| `View`      | Invoke a Data Viewer                               |
+| `describe`  | See stats at a glance, requires 'psych' R package  |
+| `ggplot + geom_histogram` | To plot a histogram  (`tidyverse`/`ggplot2`) |
+| |**Transforming your Data**                                       |
+| `log`       | Takes the logarithm of values; uses ln (natural log, base e) by default|
+| `log10`     | Takes the base-10 logarithm                        |
+| `scale`     | Convert data to z-scores                           |
+| `rescale`   | Rescale your data specifying a mean and SD (`psych`)|
+| |**Checking Normality of Distributions**          |
+| `shapiro.test`| Return Shapiro-Wilk test                         |
+| `ks.test`   | Return Kolmogorov-Smirnov test                     |
+| `median`    | Return the median value                            |
+| `mean`      | Return the mean value                              |
+| `sd`        | Return the standard deviation                      |
+| `var`       | Return the variance                                |
+| |**(Intro to) Association Tests**                                 |
+| `cor`       | Return simple correlations                       |
+| `corr.test` | Return correlations with more detail, requires 'psych' R package|
+:::
+
+***

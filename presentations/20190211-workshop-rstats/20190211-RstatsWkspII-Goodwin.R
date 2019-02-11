@@ -1,20 +1,19 @@
-# from Miranda and R-Ladies Feb 4 and previous sessions:
-#
 #######################################
 ######### Workshop PART II ############
-########## Navarro Part IV ############
 #######################################
 ## *RStats Workshop: Part II*
 # - Probability distributions, skewness & kurtosis, basic transformations w/ plots
 # - Basic Parametric (e.g., t.test, ANOVA) & Non-parametric statistical tests
 # - Inferential Statistics: hypothesis testing, p-value, correlations, confidence intervals
-# - Excel/SAS/SPSS vs R?
+# - During workshop, Sarah will highlight differences among Excel/SPSS vs R
 
-# - Handling missing & duplicate data
 
-#
+#### Installing packages if needed ####
+#install.packages("tidyverse")
+#install.packages("psych")
+
+#### Loading packages ####
 library(tidyverse) # package to work with tidy data & visualization
-
 # OR: load the individual packages:
 #library(readr)    # part of tidyverse
 #library(tidyr)    # part of tidyverse
@@ -26,54 +25,79 @@ library(readxl)    # to read Excel files
 library(psych)     # has a few useful statistical functions
 
 
-
-
-
-# about me
+############
+## about me
+############
 # Sarah Goodwin
 # Ph.D. Applied Linguistics, Georgia State University, 2017
 # postdoctoral researcher, Early Language and Literacy Investigations Laboratory (Human Development and Family Studies)
 # goodwi27@msu.edu
 ## I am an "intermediate ability level" R user ##
 
-
 ### Great book for me (though examples may not be relevant to your discipline or your work): Stefan Gries' "Statistics for Linguistics with R"
 # http://www.degruyter.com/view/product/203826
 
 
 
+## Own Dataset?
+# if you want to use your own dataset, it is best if it is plaintext. It should have just one row with all of your column/variable names, then all of your data.  Qualtrics, for instance, gives you a download with three rows at the top before the data are presented, so I always have to remove rows 2 and 3.
+
+## Migrating from Excel?
+# if you're using Excel, I find it easier to save my file in CSV format instead (File > Save As -- or press F12 -- then under "Save As Type" in the drop-down, change that to "CSV UTF-8 Comma Delimited (CSV)")
+here::here() ## Points to wherever you opened your RStudio session.
+# Path would be relative to your starting point/location of your R file.
+
+name_of_your_dataset <- read_csv("path/to/your/file", # select a file from your system
+                                 col_names=TRUE,      # column headings are in row 1
+                                 na=c("N/A","NA","None","")) # tell R if you have
+
+# name_of_your_dataset <- read.csv("path/to/your/file", # select a file from your system
+#                                  fileEncoding="UTF-8-BOM", # help you deal with special characters
+#                                  header=TRUE, # column headings are in row 1
+#                                  sep=",", # data are comma separated
+#                                  na.strings=c("N/A","NA","None","")) # tell R if you have any notation that indicates missing data; R puts gray-text NA by default in the Viewer
 
 
+###############
+## Gapminder ##
+###############
 # load and examine Gapminder dataset
-# this isn't typical, though. Most packages don't have e.g., datasets.
+# this isn't typical, though. Most packages don't have example datasets.
 # Tidyverse & Gapminder have sample datasets.
 
 library(gapminder) # Gapminder data: life expectancy, GDP per capita, population by country
-
 
 str(gapminder) # examine structure of R object
 glimpse(gapminder) # ...
 summary(gapminder) # very basic column-wise stats
 
-#### Is your data normally distributed? How to check!
+###################
+## DISTRIBUTIONS ##
+###################
 # psych::describe() # works without loading
-description <- describe(gapminder)
 describe(gapminder$lifeExp) # see stats at a glance, requires 'psych' R package
+description <- describe(gapminder) # saves describe as object called 'description'
 description$min # to look at a specific measure across variables
 
-hist(gapminder$lifeExp) # histogram
+# hist(gapminder$lifeExp) # histogram
+ggplot(gapminder, aes(x=lifeExp)) +
+  geom_histogram() +
+  theme_bw()
 
 description$skew        # Skewness: left/right trend of distribution curve
 description$kurtosis    # Kurtosis: peakedness/flatness of distribution curve
 
 ## Other ways to compute skewness and kurtosis
-# skew(gapminder$lifeExp) # skewness value
-# kurtosi(gapminder$lifeExp) # kurtosis values
+# skew(gapminder$lifeExp) # skewness value for Life Expectancy
+# kurtosi(gapminder$lifeExp) # kurtosis value for Life Expectancy
 
+#####################
+## TRANSFORMATIONS ##
+#####################
 
-#### TRANSFORMATIONS ####
+# You may want to rescale data if the tests you want to use assume normally-distributed data or you have different measures along very different scales. See below for "Testing for Normality"
+
 ## Log transformation
-
 gapminder$log.pop <- log(gapminder$pop, base=10)
 logpop_hist <- ggplot(gapminder, aes(x=log.pop)) +
   geom_histogram() +
@@ -82,20 +106,29 @@ logpop_hist <- ggplot(gapminder, aes(x=log.pop)) +
 logpop_hist
 pop_hist + scale_x_log10()
 
-## rescaling variables
-library(psych)
-poprescaled <- rescale(gapminder$pop,m=50,sd=15)
-poprescaled
+# log is BASE E by default, NOT BASE 10
+
+showinglogtransformation <- log10(gapminder$pop)
+describe(showinglogtransformation)
+hist(showinglogtransformation)
+
+## Rescaling variables
+View(gapminder)
+
+GDP_rescaled <- scale(gapminder$gdpPercap) # 'scale' available in base R; transform your data to z-scores
+View(GDP_rescaled)
+
+## Rescaling w/ Psych package
+#library(psych) #load if needed
+poprescaled <- rescale(gapminder$pop,m=50,sd=15) # rescale specifying a certain mean and standard deviation
+View(poprescaled)
 describe(poprescaled)
 
 
-# log is BASE E by default, NOT BASE 10
-
-showinglogtransformation <-log10(gapminder$pop)
-describe(showinglogtransformation)
-
 #### Testing for normality ####
-##  checking normality, goodness of fit, independence/difference tests
+## Is your data normally distributed?
+## Checking normality, goodness of fit, independence/difference tests
+
 gapminder %>%
   ggplot(aes(x = lifeExp)) +
   geom_density() +
@@ -115,13 +148,13 @@ pop_hist
 shapiro.test(gapminder$lifeExp) # gapminder Life Expectancy is nonnormally distributed.  p > .05 would indicate null hyp cannot be rejected and data are normally distributed.
 # significant --> non-normal
 
-
 ## Kolmogorov-Smirnov test
 ks.test(gapminder$lifeExp,
         "pnorm",                       # what you are testing for
         mean=mean(gapminder$lifeExp),  #
         sd=sd(gapminder$lifeExp))      # Kolmogorov-Smirnov test needs three additional arguments: the distribution to test against (pnorm), the M, and the SD
 # significant --> non-normal
+# you may get an error from R for the ks.test that says "ties should not be present"; it does not like multiple hits of the same number
 # KS vs Shapiro: https://stats.stackexchange.com/questions/362/what-is-the-difference-between-the-shapiro-wilk-test-of-normality-and-the-kolmog
 
 # for data that are ordinal, are nonnormal, or have outliers
@@ -138,29 +171,32 @@ pop_hist +
 sd(gapminder$lifeExp)
 var(gapminder$lifeExp) # variance (=sd^2)
 
-SD vs SE
-Plotting line/bar plot with the standard error added
+#SD vs SE
+# https://www.r-bloggers.com/standard-deviation-vs-standard-error/
+# here, instead of gapminder, we're using sample sets of numbers we're calling R objects "a" and "b"
+a <- c(-0.73,-0.3,0.01,0.25,0.59) # sample test scores (0 being average probability of examinee success)
+b <- c(-0.3,-0.13,-0.02,0.19,0.41) # sample standard errors
+mypretenddata <- as.data.frame(cbind(a, b)) # bind a and b together, each in their own column - as a data frame
+View(mypretenddata)
 
-# # plot to show mean estimate and standard errors of estimate
+#Plotting line/bar plot with the standard error added
+mypretenddata_2 <- barplot(mypretenddata$a,ylim=c(-1.5,1.5))
+arrows(x0=mypretenddata_2,y0=mypretenddata$a+mypretenddata$b,y1=mypretenddata$a-mypretenddata$b,angle=90,code=3,length=0.25)
+
+
+# plot to show confidence intervals around the mean (may not be so useful)
 # err <- error.dots(gapminder$lifeExp)
 # err$des   # ...
 # err$order # rank ordered?
 
 
+################################
+## Correlation/Association tests
+################################
 
-
-
-
-
-
-
-
-##  correlation / association tests
-
-
-### for post-hoc tests, see the leveneTest command in the 'car' package.
+## for post-hoc tests, see the leveneTest command in the 'car' package.
 # leveneTest(DV ~ IV, data = name_of_your_dataset_here)
-###Or see Dani Navarro's "R for Psychological Science" 20.4.1
+## Or see Dani Navarro's "R for Psychological Science" 20.4.1
 # http://psyr.org/introductory-statistics.html
 
 
@@ -169,12 +205,17 @@ install.packages('compute.es') # one-time
 library(compute.es)
 ?`compute.es-package`
 
-# correls - Pearson is default
+# correlations - Pearson is default
 cor(gapminder$lifeExp,gapminder$pop)
 
-cor(gapminder$lifeExp,gapminder$pop,method="spearman")
+cor(gapminder$lifeExp,gapminder$pop,
+    method="spearman") # to change the method
 
 # if you have incomplete data, you'll need to add the "use" argument to cor to specify to R whether to correlate pairwise, use only complete observations, remove NAs, or another stipulation.
+
+
+## more detailed correlations (needs 'psych' package)
+corr.test(gapminder$lifeExp,gapminder$pop)
 
 
 ## Correlation & confidence intervals
@@ -183,20 +224,31 @@ print(corr.test(gapminder$lifeExp,gapminder$pop),
 
 
 
+
+## We may touch on chi-sq, t-tests, ANOVAs if time permits
+
+
+
+
+
+# so we have simplified data to compare for statistical tests:
+
 # sample 'n' rows from gapminder data
-library(dplyr)
+#library(dplyr) #load package if needed
 abbrevdata_1 <- sample_n(gapminder,size=20)
 abbrevdata_2 <- sample_n(gapminder,size=20)
 
-# or sample specific records
+# or sample specific records (requires 'dplyr')
 View(gapminder)
-abbrevdata_1 <- as.data.frame(gapminder[853:994,]) #rows with data from the year 1982
-abbrevdata_2 <- as.data.frame(gapminder[995:1136,]) #rows with data from the year 1987
+abbrevdata_1 <- gapminder %>%
+  filter(year == "1982")  #rows with data from the year 1982
+abbrevdata_2 <- gapminder %>%
+  filter(year == "1987")  #rows with data from the year 1987
 
 data_shortened <- table(abbrevdata_1$lifeExp,abbrevdata_2$lifeExp)
 
 
-# chi-square statistical test
+## chi-square statistical test
 test <- chisq.test(data_shortened, correct=FALSE); test
 test$residuals
 sqrt(test$statistic/sum(data_shortened)*(min(dim(data_shortened))-1)) # effect size: Cramer's V
@@ -204,14 +256,12 @@ test$expected
 
 
 
-# t-test
+## t-test
 t.test(data_shortened, mu=0) # if normality had not been violated, we would use this line. Assumes UNequal variances by default (can add var.equal=TRUE to specify equal variances)
 
 
 # instead, use Wilcoxon:
 wilcox.test(data_shortened, mu=0, correct=FALSE)
-
-
 
 
 #### ANOVA ???
@@ -241,10 +291,6 @@ options(contrasts=c("contr.sum", "contr.poly")) # set sum contrasts
 
 
 
-#######################################
-######### Workshop PART III ###########
-########### Navarro Part V ############
-#######################################
 
 
 ##  power analyses
