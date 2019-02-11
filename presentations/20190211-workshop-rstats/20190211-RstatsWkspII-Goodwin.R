@@ -104,7 +104,10 @@ logpop_hist <- ggplot(gapminder, aes(x=log.pop)) +
   # geom_density() +
   theme_bw()
 logpop_hist
-pop_hist + scale_x_log10()
+# Alternatively...
+ggplot(gapminder, aes(x=pop)) +
+  geom_histogram() +
+  scale_x_log10()
 
 # log is BASE E by default, NOT BASE 10
 
