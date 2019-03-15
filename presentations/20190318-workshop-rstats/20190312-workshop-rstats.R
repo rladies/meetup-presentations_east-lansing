@@ -7,20 +7,29 @@
 ## Offline help: AA, Camille Archer, Janani Ravi, BB
 #############################################################################
 
-##################
-## Hypothesis test
-##################
+#####################
+## 1.0 Hypothesis testing
+#####################
 ## Briefly describe the concept of a Hypothesis test.
+## p-value and stuff...
+
 ## The following are examples of hypothesis testing in practice.
 ## Parametric (t) & Non-parametric statistical tests (Wilcox) (20min)
 
-## Parameteric tests ##
+## 1.1 Parameteric tests ##
 ## Ch 12: chi-square (For Nominal Variables)
+chisq.test()
 
 ## Ch 13: t-test (For normally distributed numerical variables)
+t.test()
 
-## Non-parameteric tests ##
-## Ch 13: Wilcoxon (For distributed-free variables)
+## 1.2 Non-parameteric tests ##
+## (Ch 13) Wilcoxon (For distributed-free variables)
+wilcox.test()
+
+## Mann-Whitney
+
+## Sp. example: Mann Kendall trend test for time-series
 
 ## Test selection: Plot/Graphic of how to select the appropriate test for your data?
 
@@ -30,37 +39,50 @@
 ## I enourage you to google for an example of your test performed with the gapminder dataset.
 ## There are lots of pre-made examples out there.
 
+## Reading in Data i.e. what format does the data need to be in to begin the analysis?
+## Show **simple** example and point to resource to see other formats.
+
 
 ## When do I use this test?
 ## (Ex. type of data (nominal v. numerical; discrete v. continuous and assumptions of data)
 ## Assumptions can include: normality, linearity, independence, homogeneity of variance (or homoescedasticity)etc.
 
+
 ## How do I test these assumptions?
 ## (For this session, I suggest we do not delve into data transformations, if possible)
 
 
-## Reading in Data (i.e. what format does the data need to be in to begin the analysis?
-## Show **simple** example and point to resource to see other formats.)
 
 
-## Run the test (identify widely-used basic modifications to arguments/parameters that result in different versions of the test). **No need to demonstrate all the different parameters, you can do one type and have students do another type to show that the result is different.** Identify key outputs needed to form conclusions from the test ex. statistic, p-value, confidence interval.
+## Run the test (identify widely-used basic modifications to arguments/parameters that result in different versions of the test).
+## **No need to demonstrate all the different parameters, you can do one type and have students do another type to show that the result is different.**
 
+## Identify key outputs needed to form conclusions from the test.
+## ex. statistic, p-value, confidence interval.
 
 ## Show how to extract and display key statistics using $
 
+
 ## Indicate the conclusion from the test.
 
-##############
-## Effect Size
-##############
+
+##################
+## 2.0 Effect Size
+##################
 ## How significant is significant?
-###If the conclusion is that the difference is statistically significant, this does not that difference is important or meaningful. Effect size is a standardized way of reporting difference between the control and experimental groups. Generally, Effect size = diff(mu1-mu2)/sd of one of the groups. How to interpret effect size? Cohen's d is a general guide: <0.1 = trivial effect; 01-0.3 = small effect; 0.3-0.5= moderate effect; >0.5 = large difference effect.
+###If the conclusion is that the difference is statistically significant, this does not that difference is important or meaningful.
+## Effect size is a standardized way of reporting difference between the control and experimental groups. Generally, Effect size = diff(mu1-mu2)/sd of one of the groups.
+## How to interpret effect size? Cohen's d is a general guide: <0.1 = trivial effect; 01-0.3 = small effect; 0.3-0.5= moderate effect; >0.5 = large difference effect.
+
+## How to do you compute effect size? p-value intro.
+
 
 ## [If time permits] False Discovery Rate (FDR)
 ## What is the chance that we reach a wrong conclusion? How can we reduce the number of false positives?
 ## This consideration becomes important in cases where you are doing multiple comparisons
 ## Bonferroni correction Vs. Benhamini-Hochberg procedure (where individual tests are assumed to be independent of each other, i.e you're comparing Sample A vs. Sample B, and Sample C vs. Sample D etc.);
 ## Tukey-Kramer vs. (where individual tests can be dependent, i.e. you're comparing Sample A vs. Sample B, and Sample A vs. Sample C etc.) -- One example of this is when doing ANOVA
+
 
 
 ## Compare your test with alternative tests (if simple). Ex. Fisher's exact test (for small data) vs. Chi-Square for data >1000. *** Keep it Simple*** If you know more, leave the complicated things for the question and answer period or just point to another resource.
@@ -72,8 +94,6 @@
 
 ## Run a **Simple** Power Analysis for this test. Identify key inputs and outputs needed to form conclusion. State conclusion.
 ## Power refers to the probability that your test will find a statistically significant difference which this difference actually exists. To perform any power test you will need to know (inputs) the following: type of test, significance level (alpha), estimated effect size (common practice is to use 0.5) and your expected sample size. When these values are entered a power value (output) between 0 and 1 will be generated. For power< 0.8, increase your sample size.
-
-
 
 
 
@@ -95,6 +115,6 @@
 #############
 ## References
 #############
-# http://meera.snre.umich.edu/power-analysis-statistical-significance-effect-size
-# http://www.biostathandbook.com/multiplecomparisons.html
-# Learning Statistics w/ R by Dani Navarro: https://learningstatisticswithr.com/book
+# 1. Learning Statistics w/ R by Dani Navarro: https://learningstatisticswithr.com/book
+# 2. http://meera.snre.umich.edu/power-analysis-statistical-significance-effect-size
+# 3. http://www.biostathandbook.com/multiplecomparisons.html
