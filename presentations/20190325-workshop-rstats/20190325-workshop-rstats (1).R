@@ -53,7 +53,59 @@ wilcox.test(sample_data_3,sample_data_4)
 
 ## Mann-Whitney
 
-## Sp. example: Mann Kendall trend test for time-series
+## Sp. example: Non-parametric Mann Kendall trend test for time-series
+
+
+#Values:
+# A list with class Kendall.
+# tau: Kendall's tau statistic
+# sl: two-sided p-value
+# S: Kendall Score
+# D: Denominator, tau=S/D
+# varS: variance of S
+
+
+library(Kendall)
+library(boot)
+data(PrecipGL)
+data(GuelphP)
+plot(GuelphP)
+#replace missing values in the series with estimates
+missingEst<-c(0.1524, 0.2144, 0.3064, 0.1342)
+GuelphP2<-GuelphP
+GuelphP2[is.na(GuelphP)]<-missingEst
+plot(GuelphP2)
+
+mann_Gue<- MannKendall(GuelphP2)
+summary(mann_Gue)
+
+# Annual precipitation entire Great Lakes
+# The time series plot with lowess smooth suggests an upward trend
+# The autocorrelation in this data does not appear significant.
+# The Mann-Kendall trend test confirms the upward trend.
+data(PrecipGL)  #Annual precipitaiton,  1900-1986, Entire Great Lakes
+plot(PrecipGL)
+lines(lowess(time(PrecipGL),PrecipGL),lwd=3, col=2)  #locally-weighted polynomial regression
+acf(PrecipGL)  #autocorrelation function
+m<- MannKendall(PrecipGL)
+summary(m)
+print(m)
+m$tau
+m$varS
+m$sl
+
+#Computes Sen's slope for linear rate of change and corresponding confidence intervalls
+library(trend)
+sens.slope(PrecipGL, conf.level = 0.95)
+
+
+
+# Reference:
+#https://cran.r-project.org/web/packages/Kendall/Kendall.pdf
+#https://cran.r-project.org/web/packages/trend/trend.pdf
+
+
+
 
 ## Test selection: Plot/Graphic of how to select the appropriate test for your data?
 
