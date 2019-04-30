@@ -1,0 +1,27 @@
+---
+title: "2011-11-06 TidyTuesday"
+output: html_notebook
+---
+
+```{r setup}
+library(tidyverse)
+library(sf)
+
+turbines <- read.csv(url('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2018-11-06/us_wind.csv'))
+```
+
+Show the Michigan turbine installations on an interactive map.
+
+```{r}
+library(mapview)
+turbines_sf <- st_as_sf(turbines, coords = c("xlong", "ylat"), crs = 4269)
+
+```
+
+```{r}
+turbines_sf %>%
+  filter(t_state == "MI") %>%
+  st_transform(3857) %>%
+  mapview()
+```
+

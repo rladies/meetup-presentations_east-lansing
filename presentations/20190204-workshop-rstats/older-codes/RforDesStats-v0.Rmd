@@ -1,0 +1,64 @@
+---
+title: "RLEL_RforDesStats_20190128"
+author: "Miranda Haus"
+date: "January 24, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+- Check your R/RStudio versions
+- For the time-being install the individual packages using `install.packages("PACKAGENAME")`
+- Check out the whole `tidyverse` suite of packages [here](https://www.tidyverse.org/packages/)
+
+
+```{install the relevant packages we will use, including our data for today.}
+#eval equals false means it won't run unless
+```{r tidyverse, eval=FALSE,echo=TRUE}
+install.packages("readr")	# Importing data files
+# install.packages("readxl") # Importing excel files
+install.packages("tidyr")	# Tidy Data
+install.packages("dplyr")	# Data manipulation
+install.packages("ggplot2")	# Data Visualization (w/ Grammar of Graphics)
+```
+
+### Loading packages
+```{r loading, eval=T, echo=TRUE}
+#eval needs to be true to load libraries below
+#echo = show
+library(tidyverse)
+# OR load the individual packages:
+library(readr)
+ library(readxl)
+ library(tidyr)
+ library(dplyr)
+ library(ggplot2)
+
+library(gapminder)
+```
+```{}
+View(gapminder)
+```
