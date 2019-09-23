@@ -2,7 +2,7 @@
 
 ## Workshop materials
 - [Setup instructions](https://drive.google.com/drive/folders/1RKuFqhXrLyjDYNipeDKu-lTVeLftoT-u)
-- [Presentation & R scripts](https://github.com/nguyens7/Rworkshop/tree/master/Session_1) <br>
+- [Presentation & R scripts](https://github.com/nguyens7/Rworkshop) <br>
 _Right click on the files to download._
 
 ## Presenters
