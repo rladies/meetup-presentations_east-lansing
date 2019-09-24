@@ -18,13 +18,24 @@
 * Janani Ravi: [Email](mailto:jananiravi@rladies.org) • [Twitter](www.twitter.com/janani137) • [Webpage](jananiravi.github.io)
 * Camille Archer: [Email](mailto:camille@rladies.org) • [Twitter](www.twitter.com/CamilleArcher5) • [Facebook](facebook.com/archerc5)
 
+## Upcoming Meetups
+### Fall 2019 events & workshops
+<img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-planning-promos/201909to12-Fall-meetup-flyer.png" width="60%" />
+
+***
+
 ## Past Meetups
-### Workshop on Intro to Tidy Data • Nov 05, 2018
+### Women in Data Science 2019
+<img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-planning-promos/201904-WiDSEL-flyer.png" width="60%" />
+
+### Spring 2019 Workshops
+<img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-planning-promos/201901-Meetup-flyer.png" width="60%" />
+
+### Fall 2018 Workshops
 <img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-planning-promos/201811-Meetup-flyer.png?raw=true" width="60%" />
 
 Workshop material: [GitHub](https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/tree/master/presentations/20181105-workshop-tidydata) • [Google Drive](https://bit.ly/rlel-20181105)
 
-### Workshop on Intro to Data Visualization • Oct 08, 2018
 <img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-planning-promos/201810-Meetup-flyer.png?raw=true" width="60%" />
 
 Workshop material: [GitHub](https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/tree/master/presentations/20181008-workshop-dataviz) • [Google Drive](https://drive.google.com/drive/folders/1tSrhZ_TymJfxeZbe8hAdtPjcmhoeAJls?usp=sharing)
