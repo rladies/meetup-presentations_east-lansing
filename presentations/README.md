@@ -5,7 +5,13 @@
 - Camille Archer | camille@eastlansing.org | archerc5@msu.edu
 
 **Questions/comments?** <br>
-Please email us (eastlansing@rladies.org) and/or ask us on [Slack](https://rladies-eastlansing.slack.com).
+- Email us: eastlansing@rladies.org _OR_
+- Ask us on [Slack](https://rladies-eastlansing.slack.com)
 
 **To cite our material** <br>
-_Use our webpage (https://github.com/rladies-eastlansing) and social media handles (twitter ([@RLadiesELansing](https:twitter.com/RLadiesELansing)) and Facebook ([@RLadiesEastLansing](https://facebook.com/RladiesEastLansing)). R-Ladies East Lansing (2018–Present)._
+- R-Ladies East Lansing (2018–Present). <br>
+_along with the appropriate media links:_
+- Webpage: https://github.com/rladies-eastlansing
+- Social media handles
+  - Twitter, [@RLadiesELansing](https:twitter.com/RLadiesELansing)
+  - Facebook, [@RLadiesEastLansing](https://facebook.com/RladiesEastLansing)
