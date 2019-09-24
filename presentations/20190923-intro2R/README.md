@@ -11,6 +11,7 @@ _Right click to download individual files OR clone/download the entire repositor
 
 ## Content developer & Sponsor program
 - Sean Nguyen
+- MSU BEST
 
 ## Event Sponsor
 - Computational Mathematics, Sciences and Engineering (CMSE), EGR/CNS, MSU
