@@ -7,4 +7,4 @@
 - Shelby Chartkoff, Fruition Analytics, Grand Rapids
 - Stephanie Hickey, CMSE & BMB, MSU
 
-Intro and presentations [here](https://drive.google.com/drive/folders/1RKuFqhXrLyjDYNipeDKu-lTVeLftoT-u).
+Intro and presentations: [On Google Drive](https://drive.google.com/drive/folders/1RKuFqhXrLyjDYNipeDKu-lTVeLftoT-u).
