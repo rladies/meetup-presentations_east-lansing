@@ -13,7 +13,7 @@ _Right click to download zip file & open the `.Rproj`._
 ## Presenters
 - [Kayla Johnson](https://github.com/kaylajohnson)
 - [Camille Archer](https://github.com/archerc5)
-- [Sean Nguyen](https://github.com/nguyens7) w/ MSU BEST
+- [Sean Nguyen](https://github.com/nguyens7)
 
 *Content adapted from [Sean Nguyen](https://github.com/nguyens7/RWorkshop) (MSU BEST).*
 
