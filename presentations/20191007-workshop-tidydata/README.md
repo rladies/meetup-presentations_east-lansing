@@ -11,12 +11,11 @@ _Right click to download zip file & open the `.Rproj`._
 - _Corresponding folder on [Google Drive](https://drive.google.com/open?id=1PHmPDtmhhSA0g4L7PHzCoflNM7oqBZbY)._
 
 ## Presenters
-- [Camille Archer](https://github.com/archerc5)
 - [Kayla Johnson](https://github.com/kaylajohnson)
-- [Sean Nguyen](https://github.com/nguyens7)
+- [Camille Archer](https://github.com/archerc5)
+- [Sean Nguyen](https://github.com/nguyens7) w/ MSU BEST
 
-## Content developer+sponsor
-- Sean Nguyen & MSU BEST
+*Content adapted from [Sean Nguyen](https://github.com/nguyens7/RWorkshop) (MSU BEST).*
 
 ## Event Sponsor
 - Computational Mathematics, Sciences and Engineering (CMSE), EGR/CNS, MSU
