@@ -6,7 +6,7 @@
 
 ## Workshop material
 - [Presentation & R scripts](https://github.com/rladies-eastlansing/meetup-presentations/tree/master/presentations/20191007-workshop-tidydata) <br>
-_Right click to download zip file & open the `.Rproj`._
+[ZIP file](https://drive.google.com/drive/u/0/folders/14UtEBKVOZaSpmaJ5UQArvidjuwvYdoES) | _Right click to download zip file & open the `.Rproj`._
 
 - _Corresponding folder on [Google Drive](https://drive.google.com/drive/u/1/folders/14UtEBKVOZaSpmaJ5UQArvidjuwvYdoES)._
 
