@@ -36,7 +36,7 @@
 
 Workshop material: [GitHub](https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/tree/master/presentations/20181105-workshop-tidydata) • [Google Drive](https://bit.ly/rlel-20181105)
 
-<img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-planning-promos/201810-Meetup-flyer.png?raw=true" width="60%" />
+<img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-flyers/201810-Meetup-flyer.png?raw=true" width="60%" />
 
 Workshop material: [GitHub](https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/tree/master/presentations/20181008-workshop-dataviz) • [Google Drive](https://drive.google.com/drive/folders/1tSrhZ_TymJfxeZbe8hAdtPjcmhoeAJls?usp=sharing)
 
