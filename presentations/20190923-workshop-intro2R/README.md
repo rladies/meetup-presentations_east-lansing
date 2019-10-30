@@ -1,8 +1,8 @@
 # Workshop: Introduction to R & RStudio
 
 ## Setup & R-help
-- [Setup instructions](https://drive.google.com/drive/folders/1RKuFqhXrLyjDYNipeDKu-lTVeLftoT-u)
-- [Cheatsheets: R, RStudio, Git, Slack, Unix/vi & more!](https://github.com/rladies/meetup-presentations_east-lansing/tree/master/presentations/cheatsheets) | [Link #2](https://github.com/jananiravi/cheatsheets)
+- [Setup instructions](https://github.com/rladies-eastlansing/meetup-presentations/blob/master/presentations/R_Rstudio_setup_instructions.md)
+- [Cheatsheets: R, RStudio, Git, Slack, Unix/vi & more!](https://github.com/rladies-eastlansing/cheatsheets)
 
 ## Workshop material
 - [Presentation & R scripts](https://github.com/nguyens7/Rworkshop) <br>
