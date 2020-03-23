@@ -19,11 +19,10 @@
 * Camille Archer: [Email](mailto:camille@rladies.org) • [Twitter](www.twitter.com/CamilleArcher5) • [Facebook](facebook.com/archerc5)
 
 ## Upcoming Meetups
-### Women+ Data Science 2020
-<img src="https://github.com/rladies-eastlansing/meetup-presentations/blob/master/event-flyers/2020-wpds-flyer.png" width="60%" />
-
 ### Spring 2020
 <img src="https://github.com/rladies-eastlansing/meetup-presentations/blob/master/event-flyers/202001to04-Spring-meetup-flyer.png" width="60%" />
+
+**HowTo Version Control**: Mar 16 -> Mar 23
 
 ***
 
