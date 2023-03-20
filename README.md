@@ -19,24 +19,29 @@
 * Camille Archer: [Email](mailto:camille@rladies.org) • [Twitter](www.twitter.com/CamilleArcher5) • [Facebook](facebook.com/archerc5)
 
 ## Upcoming Meetups
-### Fall 2019 events & workshops
-<img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-flyers/201909to12-Fall-meetup-flyer.png" width="60%" />
+### Spring 2020
+<img src="https://github.com/rladies-eastlansing/meetup-presentations/blob/master/event-flyers/202001to04-Spring-meetup-flyer.png" width="60%" />
+
+**HowTo Version Control**: Mar 16 -> Mar 23
 
 ***
 
 ## Past Meetups
+### Fall 2019
+<img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-flyers/201909to12-Fall-meetup-flyer.png" width="40%" />
+
 ### Women in Data Science 2019
-<img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-flyers/201904-WiDSEL-flyer.png" width="60%" />
+<img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-flyers/201904-WiDSEL-flyer.png" width="40%" />
 
-### Spring 2019 Workshops
-<img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-flyers/201901-Meetup-flyer.png" width="60%" />
+### Spring 2019
+<img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-flyers/201901-Meetup-flyer.png" width="40%" />
 
-### Fall 2018 Workshops
-<img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-flyers/201811-Meetup-flyer.png?raw=true" width="60%" />
+### Fall 2018
+<img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-flyers/201811-Meetup-flyer.png?raw=true" width="40%" />
 
 Workshop material: [GitHub](https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/tree/master/presentations/20181105-workshop-tidydata) • [Google Drive](https://bit.ly/rlel-20181105)
 
-<img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-flyers/201810-Meetup-flyer.png?raw=true" width="60%" />
+<img src="https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/blob/master/event-flyers/201810-Meetup-flyer.png?raw=true" width="40%" />
 
 Workshop material: [GitHub](https://github.com/rladies-eastlansing/meetup-presentations-eastlansing/tree/master/presentations/20181008-workshop-dataviz) • [Google Drive](https://drive.google.com/drive/folders/1tSrhZ_TymJfxeZbe8hAdtPjcmhoeAJls?usp=sharing)
 

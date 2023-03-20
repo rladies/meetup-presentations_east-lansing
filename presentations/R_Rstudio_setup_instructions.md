@@ -2,12 +2,12 @@
 
 ## Before the Workshop Begins
 1. Install the following software if you don’t yet have them. If you do have these installed, skip to #2:
-   1. **R** version 3.1+ (Current: 3.5.1) 
-   2. **RStudio** version 1.1.4+ or 1.2+ (Preview version) (https://www.rstudio.com/products/rstudio/) OR use RStudio Cloud (https://rstudio.cloud)
-2. Ensure that your version of **R** is 3.1+. The latest version is 3.5.1.
+   1. **R** version 3.5+ (Current: `4.0.4`) 
+   2. **RStudio** version 1.2+ (https://www.rstudio.com/products/rstudio/) OR use RStudio Cloud (https://rstudio.cloud)
+2. Ensure that your version of **R** is 3.5+. The latest version is `4.0.4`.
    To check your R version, type in your console:
    `version`
-3. Check your **RStudio** version. It should be v1.1.4+ (or 1.2.6, for RStudio Preview)
+3. Check your **RStudio** version. It should be v1.2+
 Open RStudio. In the top menu bar click: RStudio > About RStudio > 
 
 
